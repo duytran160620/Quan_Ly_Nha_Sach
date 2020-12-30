@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoCongNo.cs" />
+    <Compile Include="BaoCaoTon.cs" />
+    <Compile Include="ChiTietBaoCaoCongNo_DAO.cs" />
+    <Compile Include="ChiTietBaoCaoTon_DAO.cs" />
+    <Compile Include="ChiTietHoaDonBanSach_DAO.cs" />
+    <Compile Include="ChiTietPhieuNhapSach_DAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -51,8 +57,14 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDonBanSach_DAO.cs" />
+    <Compile Include="KhachHang-DAO.cs" />
+    <Compile Include="PhieuNhapSach_DAO.cs" />
+    <Compile Include="PhieuThuTien_DAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuyDinh_DAO.cs" />
+    <Compile Include="Sach_DAO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
