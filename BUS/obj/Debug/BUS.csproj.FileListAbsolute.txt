@@ -1,0 +1,12 @@
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\obj\Debug\BUS.csproj.GenerateResource.Cache
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\bin\Debug\BUS.exe.config
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\bin\Debug\BUS.exe
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\bin\Debug\BUS.pdb
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\obj\Debug\BUS.exe
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\obj\Debug\BUS.pdb
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\bin\Debug\DAO.exe
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\bin\Debug\DTO.exe
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\bin\Debug\DAO.pdb
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\bin\Debug\DTO.pdb
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache

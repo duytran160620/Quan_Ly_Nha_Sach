@@ -87,14 +87,14 @@ namespace DTO
             }
         }
         public KhachHang_DTO()
-	    {
+        {
             this.makhachhang = "";
             this.tenkhachhang = "";
             this.email = "";
             this.sdt = "";
             this.diachi = "";
             this.tienno = 0;
-	    }
+        }
         public KhachHang_DTO(string makhachhang, string tenkhachhang, string email, string sdt, string diachi, int tienno)
         {
             this.makhachhang = makhachhang;

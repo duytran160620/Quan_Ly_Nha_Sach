@@ -9,7 +9,7 @@ namespace DTO
     public class Sach_DTO
     {
         private string masach;
-        
+
         public string MaSach
         {
             get
@@ -75,7 +75,7 @@ namespace DTO
             }
         }
         private int dongiaban;
-        
+
         public int DonGiaBan
         {
             get
@@ -89,21 +89,21 @@ namespace DTO
         }
         public Sach_DTO()
         {
-            this.masach     = "";
-            this.tensach    = "";
-            this.theloai    = "";
-            this.tacgia     = "";
+            this.masach = "";
+            this.tensach = "";
+            this.theloai = "";
+            this.tacgia = "";
             this.soluongton = 0;
-            this.dongiaban  = 0;
+            this.dongiaban = 0;
         }
         public Sach_DTO(string masach, string tensach, string theloai, string tacgia, int soluongton, int dongiaban)
         {
-            this.masach     = masach;
-            this.tensach    = tensach;
-            this.theloai    = theloai;
-            this.tacgia     = tacgia;
+            this.masach = masach;
+            this.tensach = tensach;
+            this.theloai = theloai;
+            this.tacgia = tacgia;
             this.soluongton = soluongton;
-            this.dongiaban  = dongiaban;
+            this.dongiaban = dongiaban;
         }
 
     }
