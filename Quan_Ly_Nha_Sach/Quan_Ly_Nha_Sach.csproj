@@ -11,6 +11,7 @@
     <AssemblyName>Quan_Ly_Nha_Sach</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -116,23 +116,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMenuQuanLyNhaSach.resx">
+      <DependentUpon>FormMenuQuanLyNhaSach.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuNhapSach.resx">
       <DependentUpon>FormPhieuNhapSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -153,18 +157,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\icons8-add-book-96.png" />
-    <Content Include="Resources\icons8-book-96.png" />
-    <Content Include="Resources\icons8-cash-in-hand-96.png" />
-    <Content Include="Resources\icons8-combo-chart-96.png" />
-    <Content Include="Resources\icons8-create-document-96.png" />
-    <Content Include="Resources\icons8-direction-96.png" />
-    <Content Include="Resources\icons8-futures-96.png" />
-    <Content Include="Resources\icons8-receipt-dollar-96.png" />
-    <Content Include="Resources\icons8-search-96.png" />
-    <Content Include="Resources\icons8-user-groups-96.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
@@ -180,6 +172,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icons8-add-book-96.png" />
+    <Content Include="Resources\icons8-book-96.png" />
+    <Content Include="Resources\icons8-cash-in-hand-96.png" />
+    <Content Include="Resources\icons8-combo-chart-96.png" />
+    <Content Include="Resources\icons8-create-document-96.png" />
+    <Content Include="Resources\icons8-direction-96.png" />
+    <Content Include="Resources\icons8-futures-96.png" />
+    <Content Include="Resources\icons8-receipt-dollar-96.png" />
+    <Content Include="Resources\icons8-search-96.png" />
+    <Content Include="Resources\icons8-user-groups-96.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
