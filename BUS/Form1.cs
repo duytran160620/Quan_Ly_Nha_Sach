@@ -15,6 +15,20 @@ namespace BUS
         public Form1()
         {
             InitializeComponent();
+            DataTable dt = QuyDinh_BUS.Instance.selectThamSoQD_1();
+            foreach (DataRow item in dt.Rows)
+            {
+                int soluongnhaptoithieu = int.Parse(item["SoLuongNhapToiThieu"].ToString());
+                if (150 >= soluongnhaptoithieu)
+                {
+                    MessageBox.Show("ok");
+                }
+                else
+                {
+                    MessageBox.Show("not ok");
+                }
+                
+            }
         }
     }
 }

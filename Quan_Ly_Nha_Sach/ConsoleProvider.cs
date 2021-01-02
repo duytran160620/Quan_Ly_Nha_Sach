@@ -12,11 +12,25 @@ namespace Quan_Ly_Nha_Sach
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool AllocConsole();
+
+        private static ConsoleProvider instance;
         private ConsoleProvider()
         {
          
         }
-        public static ConsoleProvider Instance = new ConsoleProvider();
+        public static ConsoleProvider Instance 
+        {
+            get
+            {
+                if(instance == null)
+                    ConsoleProvider.instance = new ConsoleProvider();
+                return ConsoleProvider.instance;
+            }
+            private set
+            {
+                ConsoleProvider.instance = value;
+            }
+        }
         public void showConsole()
         {
             AllocConsole();

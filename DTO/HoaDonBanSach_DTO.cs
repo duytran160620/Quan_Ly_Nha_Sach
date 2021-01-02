@@ -21,9 +21,9 @@ namespace DTO
                 mahoadon = value;
             }
         }
-        private DateTime ngaylaphoadon;
+        private string ngaylaphoadon;
 
-        public DateTime NgayLapHoaDon
+        public string NgayLapHoaDon
         {
             get
             {
@@ -51,9 +51,9 @@ namespace DTO
         {
             this.mahoadon = "";
             this.makhachhang = "";
-            this.ngaylaphoadon = new DateTime();
+            this.ngaylaphoadon = "";
         }
-        public HoaDonBanSach_DTO(string mahoadon, DateTime ngaylaphoadon, string makhachhang)
+        public HoaDonBanSach_DTO(string mahoadon, string ngaylaphoadon, string makhachhang)
         {
             this.mahoadon = mahoadon;
             this.makhachhang = makhachhang;

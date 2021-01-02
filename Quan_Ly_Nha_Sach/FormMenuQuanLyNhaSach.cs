@@ -15,6 +15,7 @@ namespace Quan_Ly_Nha_Sach
         public FormMenuQuanLyNhaSach()
         {
             InitializeComponent();
+            
         }
 
         private void btnLapPhieuNhapSach_Click(object sender, EventArgs e)

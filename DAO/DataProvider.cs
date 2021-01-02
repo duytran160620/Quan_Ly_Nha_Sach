@@ -5,18 +5,33 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DTO;
 
 namespace DAO
 {
     public class DataProvider
     {
         private SqlConnection connection = new SqlConnection(@"Data Source=Q6HWDZHRGD2LJGV\SQLEXPRESS;Initial Catalog=TESTINGDB;Integrated Security=True");
-
-        public DataProvider Instance = new DataProvider();
+        // singleton
+        private static DataProvider instance;
         private DataProvider()
         {
+
         }
+        public static DataProvider Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = new DataProvider();
+                return DataProvider.instance;
+            }
+            private set
+            {
+                DataProvider.instance = value;
+            }
+        }
+        
 
         private void openConnection()
         {
@@ -44,7 +59,7 @@ namespace DAO
             cmd.CommandType = CommandType.Text;
             if (parameters != null)
             {
-                string[] listParam = query.Replace(",", "").Split(' ');
+                string[] listParam = query.Replace(",", "").Replace("(", "").Replace(")", "").Split(' ');
                 int i = 0;
                 foreach (var item in listParam)
                 {
@@ -72,13 +87,14 @@ namespace DAO
                 cmd.CommandType = CommandType.Text;
                 if (parameters != null)
                 {
-                    string[] listParam = query.Replace(",", "").Split(' ');
+                    string[] listParam = query.Replace(",", "").Replace("(", "").Replace(")", "").Split(' ');
+                    
                     int i = 0;
                     foreach (var item in listParam)
                     {
-                        if (item.Contains('@'))
+                        if (item.Contains('@') == true)
                         {
-                            cmd.Parameters.AddWithValue(item, parameters[i]);
+                            cmd.Parameters.Add(new SqlParameter(item, parameters[i]));
                             i++;
                         }
                     }
@@ -106,13 +122,13 @@ namespace DAO
             cmd.CommandType = CommandType.Text;
             if (parameters != null)
             {
-                string[] listParam = query.Replace(",", "").Split(' ');
+                string[] listParam = query.Replace(",", "").Replace("(", "").Replace(")", "").Split(' ');
                 int i = 0;
                 foreach (var item in listParam)
                 {
-                    if (item.Contains('@'))
+                    if (item.Contains('@') == true)
                     {
-                        cmd.Parameters.AddWithValue(item, parameters[i]);
+                        cmd.Parameters.Add(new SqlParameter(item, parameters[i]));
                         i++;
                     }
                 }
@@ -123,5 +139,8 @@ namespace DAO
             closeConnection();
             return result;
         }
+
+        
     }
+
 }

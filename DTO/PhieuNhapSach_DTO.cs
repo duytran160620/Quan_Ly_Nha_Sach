@@ -21,9 +21,9 @@ namespace DTO
                 maphieunhap = value;
             }
         }
-        private DateTime ngaynhap;
+        private string ngaynhap;
 
-        public DateTime NgayNhap
+        public string NgayNhap
         {
             get
             {
@@ -37,9 +37,9 @@ namespace DTO
         public PhieuNhapSach_DTO()
         {
             this.maphieunhap = "";
-            this.ngaynhap = new DateTime();
+            this.ngaynhap = "";
         }
-        public PhieuNhapSach_DTO(string maphieunhap, DateTime ngaynhap)
+        public PhieuNhapSach_DTO(string maphieunhap, string ngaynhap)
         {
             this.maphieunhap = maphieunhap;
             this.ngaynhap = ngaynhap;
