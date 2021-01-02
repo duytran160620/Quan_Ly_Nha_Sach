@@ -51,34 +51,21 @@ namespace BUS
                 return Sach_DAO.Instance.selectAllDataBy(masach);
             return null;
         }
-        public bool checkQD_1(int soluong)
-        {
-            DataTable dt = QuyDinh_BUS.Instance.selectThamSoQD_1();
-            foreach (DataRow item in dt.Rows)
-            {
-               int soluongtontoithieudenhap = int.Parse(item["SoLuongTonToiThieuDeNhap"].ToString());
-               if (soluong <= soluongtontoithieudenhap)
-               {
-                   return true;
-               }
-            }
-            return false;
-        }
         public bool insertSach(Sach_DTO sach)
         {
-            if(checkQD_1(sach.SoLuongTon))
+            if(sach.MaSach != string.Empty)
                 return Sach_DAO.Instance.insertSach(sach);
             return false;
         }
         public bool updateSach(Sach_DTO sach)
         {
-            if (checkQD_1(sach.SoLuongTon))
+            if (sach.MaSach != string.Empty)
                 return Sach_DAO.Instance.updateSach(sach);
             return false;
         }
         public bool deleteSach(Sach_DTO sach)
         {
-            if(sach.MaSach != "")
+            if (sach.MaSach != string.Empty)
             {
                 return Sach_DAO.Instance.deleteSach(sach);
             }

@@ -11,7 +11,9 @@ namespace BUS
     public class ChiTietPhieuNhapSach_BUS
     {
         private static ChiTietPhieuNhapSach_BUS instance;
-        private ChiTietPhieuNhapSach_BUS(){}
+        private ChiTietPhieuNhapSach_BUS()
+        {
+        }
         public static ChiTietPhieuNhapSach_BUS Instance
         {
             get
@@ -32,28 +34,16 @@ namespace BUS
                 return ChiTietPhieuNhapSach_DAO.Instance.selectInfoCTPhieuNhap(ctpn);
             return null;
         }
-        public bool checkQD_1(int soluongnhap)
+
+        public bool insertChiTietPhieuNhapSach(ChiTietPhieuNhapSach_DTO ctpn)
         {
-            DataTable dt = QuyDinh_BUS.Instance.selectThamSoQD_1();
-            foreach (DataRow item in dt.Rows)
-            {
-                int soluongnhaptoithieu = int.Parse(item["SoLuongNhapToiThieu"].ToString());
-                if (soluongnhap >= soluongnhaptoithieu)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public bool insertChiTietPhieuNhapSach(ChiTietPhieuNhapSach_DTO ctpn) 
-        {
-               if(checkQD_1(ctpn.SoLuongNhap))
-                   return ChiTietPhieuNhapSach_DAO.Instance.insertChiTietPhieuNhapSach(ctpn);
+            if (ctpn.MaPhieuNhap != string.Empty && ctpn.MaSach != string.Empty)
+                return ChiTietPhieuNhapSach_DAO.Instance.insertChiTietPhieuNhapSach(ctpn);
             return false;
         }
         public bool updateChiTietPhieuNhapSach(ChiTietPhieuNhapSach_DTO ctpn)
         {
-            if (checkQD_1(ctpn.SoLuongNhap))
+            if (ctpn.MaPhieuNhap != string.Empty && ctpn.MaSach != string.Empty)
                 return ChiTietPhieuNhapSach_DAO.Instance.updateChiTietPhieuNhapSach(ctpn);
             return false;
         }

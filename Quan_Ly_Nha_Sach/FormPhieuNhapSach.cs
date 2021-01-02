@@ -199,21 +199,19 @@ namespace Quan_Ly_Nha_Sach
             }
             for (int i = 0; i < listCT.Count; i++)
             {
-                bool quydinh_1a = ChiTietPhieuNhapSach_BUS.Instance.checkQD_1(listCT[i].SoLuongNhap);
-                bool quydinh_1b = Sach_BUS.Instance.checkQD_1(listSach[i].SoLuongTon);
-                if (quydinh_1a == false && quydinh_1b == true)
+                int quydinh = QuyDinh_BUS.Instance.checkQD_1(listCT[i].SoLuongNhap, listSach[i].SoLuongTon);
+                
+                if (quydinh == 1)
                 {
                     string mess = string.Format("Không thêm được mã sách {0} vì số lượng nhập phải ít nhất là 150", listCT[i].MaSach);
                     MessageBox.Show(mess, "Thông báo");
-                    dataGVCTPhieuNhapSach.Rows.RemoveAt(i);
                 }
-                else if (quydinh_1a == true && quydinh_1b == false)
+                else if (quydinh == 2)
                 {
                     string mess = string.Format("Không thêm được mã sách {0} vì số lượng tồn tối thiểu phải ít hơn là 300", listCT[i].MaSach);
                     MessageBox.Show(mess, "Thông báo");
-                    dataGVCTPhieuNhapSach.Rows.RemoveAt(i);
                 }
-                else if (quydinh_1a == true && quydinh_1b == true)
+                else if (quydinh == 3)
                 {
                     // kiểm tra true false // hiện thông báo
                     if (ChiTietPhieuNhapSach_BUS.Instance.insertChiTietPhieuNhapSach(listCT[i]))
@@ -263,28 +261,29 @@ namespace Quan_Ly_Nha_Sach
             }
             for (int i = 0; i < listCT.Count; i++)
             {
-                bool quydinh_1a = ChiTietPhieuNhapSach_BUS.Instance.checkQD_1(listCT[i].SoLuongNhap);
-                bool quydinh_1b = Sach_BUS.Instance.checkQD_1(listSach[i].SoLuongTon);
-                if (quydinh_1a == false && quydinh_1b == true)
+                int quydinh = QuyDinh_BUS.Instance.checkQD_1(listCT[i].SoLuongNhap, listSach[i].SoLuongTon);
+                if (quydinh == 1)
                 {
                     string mess = string.Format("Không cập nhật được mã sách {0} vì số lượng nhập phải ít nhất là 150", listCT[i].MaSach);
                     MessageBox.Show(mess, "Thông báo");
                 }
-                else if (quydinh_1a == true && quydinh_1b == false)
+                else if (quydinh == 2)
                 {
                     string mess = string.Format("Không cập nhật được mã sách {0} vì số lượng tồn tối thiểu phải ít hơn là 300", listCT[i].MaSach);
                     MessageBox.Show(mess, "Thông báo");
                 }
-                else if (quydinh_1a == true && quydinh_1b == true)
+                else if (quydinh == 3)
                 {
                     // kiểm tra true false // hiện thông báo
                     if (ChiTietPhieuNhapSach_BUS.Instance.updateChiTietPhieuNhapSach(listCT[i]))
                     {
-                        MessageBox.Show("Cập nhật thành công", "Thông báo");
+                        string mess = string.Format("Cập nhật mã sách {0} thành công", listCT[i].MaSach);
+                        MessageBox.Show(mess, "Thông báo");
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật không thành công", "Thông báo");
+                        string mess = string.Format("Cập nhật mã sách {0} không thành công", listCT[i].MaSach);
+                        MessageBox.Show(mess, "Thông báo");
                     }
                 }
             }
@@ -352,6 +351,11 @@ namespace Quan_Ly_Nha_Sach
                 selectedRow.Cells["SoLuongTon"].Value = row["SoLuongTon"].ToString();
                 selectedRow.Cells["DonGiaBan"].Value = row["DonGiaBan"].ToString();
             }
+        }
+
+        private void dataGVCTPhieuNhapSach_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            e.Row.Cells["Chon"].Value = true;
         }
 
 

@@ -29,9 +29,42 @@ namespace BUS
             }
         }
 
-        public DataTable selectThamSoQD_1()
+        public int checkQD_1(int soluongnhap, int soluongton)
         {
-            return QuyDinh_DAO.Instance.selectThamSoQD_1();
+            DataTable dt = QuyDinh_DAO.Instance.selectThamSoQD_1();
+            foreach (DataRow row in dt.Rows)
+            {
+                int soluongnhaptoithieu = int.Parse(row["SoLuongNhapToiThieu"].ToString());
+                int soluongtontoithieudenhap = int.Parse(row["SoLuongTonToiThieuDeNhap"].ToString());
+                if (soluongnhap <= soluongnhaptoithieu && soluongton <= soluongtontoithieudenhap)
+                {
+                    return 1;
+                }
+                else if (soluongnhap >= soluongnhaptoithieu && soluongton >= soluongtontoithieudenhap)
+                {
+                    return 2;
+                }
+                else if(soluongnhap >= soluongnhaptoithieu && soluongton <= soluongtontoithieudenhap)
+                {
+                    return 3;
+                }
+            }
+            return -1;
+        }
+
+        public bool checkQD_2(int tienoKH, int soluong)
+        {
+            DataTable dt = QuyDinh_DAO.Instance.selectThamSoQD_2();
+            foreach (DataRow row in dt.Rows)
+            {
+                int tiennotoida = int.Parse(row["TienNoToiDa"].ToString());
+                int soluongtonsaukhiban = int.Parse(row["SoLuongTonToiThieuSauKhiBan"].ToString());
+                if(tienoKH < tiennotoida && soluong > soluongtonsaukhiban)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

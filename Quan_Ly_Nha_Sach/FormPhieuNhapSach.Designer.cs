@@ -130,6 +130,7 @@
             this.dataGVCTPhieuNhapSach.Size = new System.Drawing.Size(836, 236);
             this.dataGVCTPhieuNhapSach.TabIndex = 1;
             this.dataGVCTPhieuNhapSach.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGVCTPhieuNhapSach_CellMouseDoubleClick);
+            this.dataGVCTPhieuNhapSach.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGVCTPhieuNhapSach_DefaultValuesNeeded);
             // 
             // label3
             // 

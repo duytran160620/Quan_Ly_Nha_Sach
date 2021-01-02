@@ -30,7 +30,12 @@ namespace DAO
 
         public DataTable selectThamSoQD_1()
         {
-            string query = "select SoLuongNhapToiThieu, SoLuongTonToiThieuDeNhap from QUYDINH";
+            string query = "select SoLuongNhapToiThieu , SoLuongTonToiThieuDeNhap from QUYDINH";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable selectThamSoQD_2()
+        {
+            string query = "select TienNoToiDa , SoLuongTonToiThieuSauKhiBan from QUYDINH";
             return DataProvider.Instance.ExecuteQuery(query);
         }
     }
