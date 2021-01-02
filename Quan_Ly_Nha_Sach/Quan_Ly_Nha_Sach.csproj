@@ -116,6 +116,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormHoaDonBanSach.resx">
+      <DependentUpon>FormHoaDonBanSach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenuQuanLyNhaSach.resx">
       <DependentUpon>FormMenuQuanLyNhaSach.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

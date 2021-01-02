@@ -62,7 +62,8 @@ namespace Quan_Ly_Nha_Sach
             if (PhieuNhapSach_BUS.Instance.insertPhieuNhapSach(pn))
             {
                 // Thông báo
-                MessageBox.Show("Thêm thành công", "Thông báo");
+                string mess = string.Format("Thêm phiếu nhập {0} thành công", pn.MaPhieuNhap);
+                MessageBox.Show(mess, "Thông báo");
                 // Load lại toàn bộ phiếu nhập
                 loadAllPhieuNhapSach();
                 // Hiển thị mã phiếu nhập và ngày nhập mới
@@ -73,7 +74,8 @@ namespace Quan_Ly_Nha_Sach
             }
             else
             {
-                MessageBox.Show("Thêm không thành công", "Thông báo");
+                string mess = string.Format("Thêm phiếu nhập {0} không thành công", pn.MaPhieuNhap);
+                MessageBox.Show(mess, "Thông báo");
             }
 
 
@@ -92,12 +94,14 @@ namespace Quan_Ly_Nha_Sach
 
             if (PhieuNhapSach_BUS.Instance.updatePhieuNhapSach(pn))
             {
-                MessageBox.Show("Cập nhật thành công", "Thông báo");
+                string mess = string.Format("Cập nhật phiếu nhập {0} thành công", pn.MaPhieuNhap);
+                MessageBox.Show(mess, "Thông báo");
                 loadAllPhieuNhapSach();
             }
             else
             {
-                MessageBox.Show("Cập nhật không thành công", "Thông báo");
+                string mess = string.Format("Cập nhật phiếu nhập {0} không thành công", pn.MaPhieuNhap);
+                MessageBox.Show(mess, "Thông báo");
             }
         }
 
@@ -109,12 +113,16 @@ namespace Quan_Ly_Nha_Sach
             pn.MaPhieuNhap = maPN;
             if (PhieuNhapSach_BUS.Instance.deletePhieuNhapSach(pn))
             {
-                MessageBox.Show("Xóa thành công", "Thông báo");
+                string mess = string.Format("Xóa phiếu nhập {0} thành công", pn.MaPhieuNhap);
+                MessageBox.Show(mess, "Thông báo");
+                
                 loadAllPhieuNhapSach();
             }
             else
             {
-                MessageBox.Show("Xóa không thành công", "Thông báo");
+                string mess = string.Format("Xóa phiếu nhập {0} không thành công", pn.MaPhieuNhap);
+                MessageBox.Show(mess, "Thông báo");
+                
             }
         }
 
@@ -197,22 +205,26 @@ namespace Quan_Ly_Nha_Sach
                 {
                     string mess = string.Format("Không thêm được mã sách {0} vì số lượng nhập phải ít nhất là 150", listCT[i].MaSach);
                     MessageBox.Show(mess, "Thông báo");
+                    dataGVCTPhieuNhapSach.Rows.RemoveAt(i);
                 }
                 else if (quydinh_1a == true && quydinh_1b == false)
                 {
                     string mess = string.Format("Không thêm được mã sách {0} vì số lượng tồn tối thiểu phải ít hơn là 300", listCT[i].MaSach);
                     MessageBox.Show(mess, "Thông báo");
+                    dataGVCTPhieuNhapSach.Rows.RemoveAt(i);
                 }
                 else if (quydinh_1a == true && quydinh_1b == true)
                 {
                     // kiểm tra true false // hiện thông báo
                     if (ChiTietPhieuNhapSach_BUS.Instance.insertChiTietPhieuNhapSach(listCT[i]))
                     {
-                        MessageBox.Show("Thêm thành công", "Thông báo");
+                        string mess = string.Format("Thêm mã sách {0} thành công", listCT[i].MaSach);
+                        MessageBox.Show(mess, "Thông báo");
                     }
                     else
                     {
-                        MessageBox.Show("Thêm không thành công", "Thông báo");
+                        string mess = string.Format("Thêm mã sách {0} không thành công", listCT[i].MaSach);
+                        MessageBox.Show(mess, "Thông báo");
                     }
                 }
             }
@@ -304,7 +316,8 @@ namespace Quan_Ly_Nha_Sach
                 // kiểm tra true false // hiện thông báo
                 if (ChiTietPhieuNhapSach_BUS.Instance.deleteChiTietPhieuNhapSach(listCT[i]))
                 {
-                    MessageBox.Show("Xóa thành công", "Thông báo");
+                    string mess = string.Format("Xóa mã sách {0} thành công", listCT[i].MaSach);
+                    MessageBox.Show(mess, "Thông báo");
                     DataTable dt = ChiTietPhieuNhapSach_BUS.Instance.selectInfoCTPhieuNhap(new ChiTietPhieuNhapSach_DTO()
                     {
                         MaPhieuNhap = listCT[i].MaPhieuNhap
@@ -314,7 +327,8 @@ namespace Quan_Ly_Nha_Sach
                 }
                 else
                 {
-                    MessageBox.Show("Xóa không thành công", "Thông báo");
+                    string mess = string.Format("Xóa mã sách {0} không thành công", listCT[i].MaSach);
+                    MessageBox.Show(mess, "Thông báo");
                 }
             }
         }

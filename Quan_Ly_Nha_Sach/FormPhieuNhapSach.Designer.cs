@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGVPhieuNhapSach = new System.Windows.Forms.DataGridView();
             this.btnLapPhieuNhapSach = new System.Windows.Forms.Button();
             this.btnCapNhatPhieuNhapSach = new System.Windows.Forms.Button();
             this.btnXoaPhieuNhapSach = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaPN = new System.Windows.Forms.TextBox();
-            this.txtNgayNhap = new System.Windows.Forms.TextBox();
             this.btnLapCTPhieuNhapSach = new System.Windows.Forms.Button();
             this.btnCapNhatCTPhieuNhapSach = new System.Windows.Forms.Button();
             this.btnXoaCTPhieuNhapSach = new System.Windows.Forms.Button();
@@ -48,11 +48,11 @@
             this.lblNgayNhap = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnXemChiTiet = new System.Windows.Forms.Button();
-            this.dataGVPhieuNhapSach = new System.Windows.Forms.DataGridView();
+            this.txtNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVPhieuNhapSach)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVCTPhieuNhapSach)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVPhieuNhapSach)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -73,6 +73,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(521, 123);
             this.panel1.TabIndex = 1;
+            // 
+            // dataGVPhieuNhapSach
+            // 
+            this.dataGVPhieuNhapSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGVPhieuNhapSach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGVPhieuNhapSach.Location = new System.Drawing.Point(0, 0);
+            this.dataGVPhieuNhapSach.Name = "dataGVPhieuNhapSach";
+            this.dataGVPhieuNhapSach.Size = new System.Drawing.Size(521, 123);
+            this.dataGVPhieuNhapSach.TabIndex = 3;
             // 
             // btnLapPhieuNhapSach
             // 
@@ -146,13 +155,6 @@
             this.txtMaPN.Name = "txtMaPN";
             this.txtMaPN.Size = new System.Drawing.Size(219, 20);
             this.txtMaPN.TabIndex = 10;
-            // 
-            // txtNgayNhap
-            // 
-            this.txtNgayNhap.Location = new System.Drawing.Point(106, 73);
-            this.txtNgayNhap.Name = "txtNgayNhap";
-            this.txtNgayNhap.Size = new System.Drawing.Size(219, 20);
-            this.txtNgayNhap.TabIndex = 11;
             // 
             // btnLapCTPhieuNhapSach
             // 
@@ -241,26 +243,25 @@
             this.btnXemChiTiet.UseVisualStyleBackColor = true;
             this.btnXemChiTiet.Click += new System.EventHandler(this.btnXemChiTiet_Click);
             // 
-            // dataGVPhieuNhapSach
+            // txtNgayNhap
             // 
-            this.dataGVPhieuNhapSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGVPhieuNhapSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGVPhieuNhapSach.Location = new System.Drawing.Point(0, 0);
-            this.dataGVPhieuNhapSach.Name = "dataGVPhieuNhapSach";
-            this.dataGVPhieuNhapSach.Size = new System.Drawing.Size(521, 123);
-            this.dataGVPhieuNhapSach.TabIndex = 3;
+            this.txtNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtNgayNhap.Location = new System.Drawing.Point(106, 74);
+            this.txtNgayNhap.Name = "txtNgayNhap";
+            this.txtNgayNhap.Size = new System.Drawing.Size(219, 20);
+            this.txtNgayNhap.TabIndex = 17;
             // 
             // FormPhieuNhapSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 523);
+            this.Controls.Add(this.txtNgayNhap);
             this.Controls.Add(this.btnXemChiTiet);
             this.Controls.Add(this.lblNgayNhap);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblMaPN);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtNgayNhap);
             this.Controls.Add(this.txtMaPN);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -277,9 +278,9 @@
             this.Name = "FormPhieuNhapSach";
             this.Text = "FormPhieuNhapSach";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGVPhieuNhapSach)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGVCTPhieuNhapSach)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGVPhieuNhapSach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +297,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaPN;
-        private System.Windows.Forms.TextBox txtNgayNhap;
         private System.Windows.Forms.Button btnLapCTPhieuNhapSach;
         private System.Windows.Forms.Button btnCapNhatCTPhieuNhapSach;
         private System.Windows.Forms.Button btnXoaCTPhieuNhapSach;
@@ -308,6 +308,7 @@
         private System.Windows.Forms.DataGridView dataGVCTPhieuNhapSach;
         private System.Windows.Forms.Button btnXemChiTiet;
         private System.Windows.Forms.DataGridView dataGVPhieuNhapSach;
+        private System.Windows.Forms.DateTimePicker txtNgayNhap;
 
     }
 }
