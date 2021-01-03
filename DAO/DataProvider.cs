@@ -40,7 +40,6 @@ namespace DAO
                 connection.Open();
             }
         }
-
         private void closeConnection()
         {
             if (connection.State == ConnectionState.Open)
@@ -48,7 +47,6 @@ namespace DAO
                 connection.Close();
             }
         }
-
         public DataTable ExecuteQuery(string query, object[] parameters = null)
         {
             DataTable dt = new DataTable();

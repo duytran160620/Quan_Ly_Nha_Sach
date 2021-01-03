@@ -33,7 +33,6 @@ namespace DAO
             string query = "select * from HOADONBANSACH";
             return DataProvider.Instance.ExecuteQuery(query);
         }
-
         public bool insertHoaDon(HoaDonBanSach_DTO hd)
         {
             string query = "insert into HOADONBANSACH values (@mahd, @ngaylap, @makh)";

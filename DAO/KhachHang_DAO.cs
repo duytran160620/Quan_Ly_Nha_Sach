@@ -32,13 +32,18 @@ namespace DAO
             string query = "select MaKhachHang from KHACHHANG";
             return DataProvider.Instance.ExecuteQuery(query);
         }
-        public DataTable selectHoTenKhachHangBy(string makh)
+        public DataTable selectHoTenKhachHangByMaKH(string makh)
         {
             string query = "select TenKhachHang from KHACHHANG where MaKhachHang = @makh";
             object[] parameters = new object[] { makh };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
-
+        public DataTable selectTienNoCuaKhachHangByMaKH(string makh)
+        {
+            string query = "select TienNo from KHACHHANG where MaKhachHang = @makh";
+            object[] parameters = new object[] { makh };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
 
         //public bool insertKhachHang(KhachHang_DTO kh)
         //{

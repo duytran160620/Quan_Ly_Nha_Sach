@@ -27,10 +27,12 @@ namespace Quan_Ly_Nha_Sach
 
 
         }
+
         void settingDataGridView(DataGridView dataGV)
         {
             dataGV.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
+
         void loadAllPhieuNhapSach()
         {
             PhieuNhapSach_BUS.Instance.loadAllPhieuNhapSach(dataGVPhieuNhapSach);
@@ -48,6 +50,12 @@ namespace Quan_Ly_Nha_Sach
             dt.Columns.Add(new DataColumn("SoLuongTon", typeof(string)));
             dt.Columns.Add(new DataColumn("DonGiaBan", typeof(string)));
             dt.Columns.Add(new DataColumn("Chon", typeof(bool)));
+            dt.Columns["Chon"].DefaultValue = true;
+            dt.Columns["TenSach"].ReadOnly = true;
+            dt.Columns["TheLoai"].ReadOnly = true;
+            dt.Columns["TacGia"].ReadOnly = true;
+            dt.Columns["SoLuongTon"].ReadOnly = true;
+            dt.Columns["DonGiaBan"].ReadOnly = true;
             return dt;
         }
         // Start Phieu Nhap Sach
@@ -147,6 +155,11 @@ namespace Quan_Ly_Nha_Sach
                 MaPhieuNhap = pn.MaPhieuNhap
             });
             dt.Columns.Add(new DataColumn("Chon", typeof(bool)));
+            dt.Columns["TenSach"].ReadOnly = true;
+            dt.Columns["TheLoai"].ReadOnly = true;
+            dt.Columns["TacGia"].ReadOnly = true;
+            dt.Columns["SoLuongTon"].ReadOnly = true;
+            dt.Columns["DonGiaBan"].ReadOnly = true;
             dataGVCTPhieuNhapSach.DataSource = dt;
 
         }
@@ -166,6 +179,7 @@ namespace Quan_Ly_Nha_Sach
             }
             return false;
         }
+
         private void btnLapCTPhieuNhapSach_Click(object sender, EventArgs e)
         {
             List<ChiTietPhieuNhapSach_DTO> listCT = new List<ChiTietPhieuNhapSach_DTO>();
@@ -197,6 +211,8 @@ namespace Quan_Ly_Nha_Sach
                     }
                 }
             }
+
+
             for (int i = 0; i < listCT.Count; i++)
             {
                 int quydinh = QuyDinh_BUS.Instance.checkQD_1(listCT[i].SoLuongNhap, listSach[i].SoLuongTon);
@@ -216,11 +232,13 @@ namespace Quan_Ly_Nha_Sach
                     // kiểm tra true false // hiện thông báo
                     if (ChiTietPhieuNhapSach_BUS.Instance.insertChiTietPhieuNhapSach(listCT[i]))
                     {
+                        Sach_BUS.Instance.updateSoLuongTonSauKhiNhap(listCT[i].MaSach, listCT[i].SoLuongNhap);
                         string mess = string.Format("Thêm mã sách {0} thành công", listCT[i].MaSach);
                         MessageBox.Show(mess, "Thông báo");
                     }
                     else
                     {
+                        
                         string mess = string.Format("Thêm mã sách {0} không thành công", listCT[i].MaSach);
                         MessageBox.Show(mess, "Thông báo");
                     }
@@ -277,6 +295,7 @@ namespace Quan_Ly_Nha_Sach
                     // kiểm tra true false // hiện thông báo
                     if (ChiTietPhieuNhapSach_BUS.Instance.updateChiTietPhieuNhapSach(listCT[i]))
                     {
+                        Sach_BUS.Instance.updateSoLuongTonSauKhiNhap(listCT[i].MaSach, listCT[i].SoLuongNhap);
                         string mess = string.Format("Cập nhật mã sách {0} thành công", listCT[i].MaSach);
                         MessageBox.Show(mess, "Thông báo");
                     }
@@ -331,8 +350,6 @@ namespace Quan_Ly_Nha_Sach
                 }
             }
         }
-
-
         
         private void dataGVCTPhieuNhapSach_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -340,6 +357,11 @@ namespace Quan_Ly_Nha_Sach
             string masach = selectedRow.Cells["MaSach"].Value.ToString();
             DataTable dt = Sach_BUS.Instance.selectAllDataBy(masach);
             dt.Columns.Add(new DataColumn("Chon", typeof(bool)));
+            dt.Columns["TenSach"].ReadOnly = true;
+            dt.Columns["TheLoai"].ReadOnly = true;
+            dt.Columns["TacGia"].ReadOnly = true;
+            dt.Columns["SoLuongTon"].ReadOnly = true;
+            dt.Columns["DonGiaBan"].ReadOnly = true;
             int temp = 0;
             foreach (DataRow row in dt.Rows)
             {
@@ -353,10 +375,7 @@ namespace Quan_Ly_Nha_Sach
             }
         }
 
-        private void dataGVCTPhieuNhapSach_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
-        {
-            e.Row.Cells["Chon"].Value = true;
-        }
+       
 
 
 

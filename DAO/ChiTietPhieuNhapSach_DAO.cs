@@ -10,9 +10,7 @@ namespace DAO
     public class ChiTietPhieuNhapSach_DAO
     {
         private static ChiTietPhieuNhapSach_DAO instance;
-
         private ChiTietPhieuNhapSach_DAO(){}
-
         public static ChiTietPhieuNhapSach_DAO Instance
         {
             get
@@ -33,7 +31,6 @@ namespace DAO
             object[] parameters = new object[] { ctpn.MaPhieuNhap};
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
-
         public bool insertChiTietPhieuNhapSach(ChiTietPhieuNhapSach_DTO ctpn)
         {
             string query = "INSERT INTO CHITIETPHIEUNHAPSACH VALUES (@mapn, @masach, @soluongnhap)";

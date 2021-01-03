@@ -30,7 +30,6 @@ namespace DAO
         {
             return DataProvider.Instance.ExecuteQuery("select * from PHIEUNHAPSACH");
         }
-        
         public bool insertPhieuNhapSach(PhieuNhapSach_DTO pn)
         {
             string query = "INSERT INTO PHIEUNHAPSACH VALUES (@mapn, @ngaynhap)";

@@ -34,7 +34,6 @@ namespace BUS
                 return ChiTietPhieuNhapSach_DAO.Instance.selectInfoCTPhieuNhap(ctpn);
             return null;
         }
-
         public bool insertChiTietPhieuNhapSach(ChiTietPhieuNhapSach_DTO ctpn)
         {
             if (ctpn.MaPhieuNhap != string.Empty && ctpn.MaSach != string.Empty)

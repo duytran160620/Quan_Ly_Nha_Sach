@@ -34,18 +34,23 @@ namespace BUS
         {
             return HoaDonBanSach_DAO.Instance.selectAllHoaDon();
         }
-
         public bool insertHoaDon(HoaDonBanSach_DTO hd)
         {
-            return HoaDonBanSach_DAO.Instance.insertHoaDon(hd);
+            if(hd.MaHoaDon != string.Empty && hd.MaKhachHang != string.Empty)
+                return HoaDonBanSach_DAO.Instance.insertHoaDon(hd);
+            return false;
         }
         public bool updateHoaDon(HoaDonBanSach_DTO hd)
         {
-            return HoaDonBanSach_DAO.Instance.updateHoaDon(hd);
+            if (hd.MaHoaDon != string.Empty && hd.MaKhachHang != string.Empty)
+                return HoaDonBanSach_DAO.Instance.updateHoaDon(hd);
+            return false;
         }
         public bool deleteHoaDon(HoaDonBanSach_DTO hd)
         {
-            return HoaDonBanSach_DAO.Instance.deleteHoaDon(hd);
+            if (hd.MaHoaDon != string.Empty && hd.MaKhachHang != string.Empty)
+                return HoaDonBanSach_DAO.Instance.deleteHoaDon(hd);
+            return false;
         }
     }
 }

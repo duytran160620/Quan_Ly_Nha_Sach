@@ -71,5 +71,17 @@ namespace BUS
             }
             return false;
         }
+        public bool updateSoLuongTonSauKhiBan(string masach, int soluongdaban)
+        {
+            return Sach_DAO.Instance.updateSoLuongTonSauKhiBan(masach, soluongdaban);
+        }
+        public bool updateSoLuongTonSauKhiBanKhongThanhCong(string masach, int soluongdaban)
+        {
+            return Sach_DAO.Instance.updateSoLuongTonSauKhiBanKhongThanhCong(masach, soluongdaban);
+        }
+        public bool updateSoLuongTonSauKhiNhap(string masach, int soluongnhap)
+        {
+            return Sach_DAO.Instance.updateSoLuongTonSauKhiNhap(masach, soluongnhap);
+        }
     }
 }

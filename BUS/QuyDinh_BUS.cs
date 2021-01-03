@@ -51,20 +51,61 @@ namespace BUS
             }
             return -1;
         }
-
-        public bool checkQD_2(int tienoKH, int soluong)
+        public bool checkTienNoCuaKhachHang(int tienno)
+        {
+            DataTable dt = QuyDinh_DAO.Instance.selectThamSoQD_2();
+            foreach (DataRow row in dt.Rows)
+            {
+                int tiennotoida = int.Parse(row["TienNoToiDa"].ToString());
+                if(tienno <= tiennotoida)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool checkSoLuongTonSauKhiBan(int soluongton)
+        {
+            DataTable dt = QuyDinh_DAO.Instance.selectThamSoQD_2();
+            foreach (DataRow row in dt.Rows)
+            {
+                int soluongtonsaukhiban = int.Parse(row["SoLuongTonToiThieuSauKhiBan"].ToString());
+                if (soluongton >= soluongtonsaukhiban)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public int checkQD_2(int tienoKH, int soluongton)
         {
             DataTable dt = QuyDinh_DAO.Instance.selectThamSoQD_2();
             foreach (DataRow row in dt.Rows)
             {
                 int tiennotoida = int.Parse(row["TienNoToiDa"].ToString());
                 int soluongtonsaukhiban = int.Parse(row["SoLuongTonToiThieuSauKhiBan"].ToString());
-                if(tienoKH < tiennotoida && soluong > soluongtonsaukhiban)
+                if (tienoKH >= tiennotoida && soluongton >= soluongtonsaukhiban)
                 {
-                    return true;
+                    return 1;
+                }
+                else if(tienoKH <= tiennotoida && soluongton <= soluongtonsaukhiban)
+                {
+                    return 2;
+                }
+                else if(tienoKH <= tiennotoida && soluongton >= soluongtonsaukhiban)
+                {
+                    return 3;
                 }
             }
-            return false;
+            return -1;
+        }
+        public DataTable selectThamSoQD_1()
+        {
+            return QuyDinh_DAO.Instance.selectThamSoQD_1();
+        }
+        public DataTable selectThamSoQD_2()
+        {
+            return QuyDinh_DAO.Instance.selectThamSoQD_2();
         }
     }
 }

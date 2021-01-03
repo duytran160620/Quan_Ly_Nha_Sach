@@ -92,7 +92,29 @@ namespace DAO
             };
             return DataProvider.Instance.ExecuteNonQuery(query, parameters);
         }
-
+        public bool updateSoLuongTonSauKhiBan(string masach, int soluongdaban)
+       {
+           string query = "exec updateSoLuongTonSauKhiBan @masach, @soluongdaban";
+           object[] parameters = new object[] 
+           {
+               masach, 
+               soluongdaban
+           };
+           return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+       }
+        public bool updateSoLuongTonSauKhiBanKhongThanhCong(string masach, int soluongdaban)
+        {
+            string query = "exec updateSoLuongTonSauKhiBanKhongThanhCong @masach, @soluongdaban";
+            object[] parameters = new object[] { masach, soluongdaban };
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
+        public bool updateSoLuongTonSauKhiNhap(string masach, int soluongnhap)
+        {
+            string query = "exec updateSoLuongTonSauKhiNhap @masach, @soluongnhap";
+            object[] parameters = new object[] { masach, soluongnhap};
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
+        
         
     }
 }

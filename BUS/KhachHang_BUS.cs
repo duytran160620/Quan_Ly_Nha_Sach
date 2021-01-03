@@ -36,8 +36,14 @@ namespace BUS
         public DataTable selectTenKhachHangByMaKH(string makh)
         {
             if (makh != "")
-                return KhachHang_DAO.Instance.selectHoTenKhachHangBy(makh);
-            return new DataTable();
+                return KhachHang_DAO.Instance.selectHoTenKhachHangByMaKH(makh);
+            return null;
+        }
+        public DataTable selectTienNoCuaKhachhangByMaKH(string makh)
+        {
+            if (makh != string.Empty)
+                return KhachHang_DAO.Instance.selectTienNoCuaKhachHangByMaKH(makh);
+            return null;
         }
     }
 }
