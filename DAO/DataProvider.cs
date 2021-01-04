@@ -133,7 +133,7 @@ namespace DAO
             }
             openConnection();
             string resultString = cmd.ExecuteScalar().ToString();
-            result = ((resultString != "") ? int.Parse(resultString) : 0);
+            result = ((resultString != string.Empty) ? int.Parse(resultString) : 0);
             closeConnection();
             return result;
         }

@@ -99,6 +99,29 @@ namespace BUS
             }
             return -1;
         }
+        public bool ifUseQD_4()
+        {
+            DataTable dt = selectThamSoQD_4();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (Convert.ToBoolean(row["DuocThuVuotSoTienKhachHangDangNo"].ToString()) == true)// sử dụng quy định 4
+                {
+                    return true;
+                }
+            }
+            return false; //không sử dụng quy định 4
+        }
+        public bool checkQD_4(int sotienthu, int sotiendangno)
+        {
+            if(ifUseQD_4())
+            {
+                if(sotienthu <= sotiendangno)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public DataTable selectThamSoQD_1()
         {
             return QuyDinh_DAO.Instance.selectThamSoQD_1();
@@ -106,6 +129,10 @@ namespace BUS
         public DataTable selectThamSoQD_2()
         {
             return QuyDinh_DAO.Instance.selectThamSoQD_2();
+        }
+        public DataTable selectThamSoQD_4()
+        {
+            return QuyDinh_DAO.Instance.selectThamSoQD_4();
         }
     }
 }

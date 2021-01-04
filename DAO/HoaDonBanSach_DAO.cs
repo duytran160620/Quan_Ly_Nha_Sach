@@ -33,6 +33,23 @@ namespace DAO
             string query = "select * from HOADONBANSACH";
             return DataProvider.Instance.ExecuteQuery(query);
         }
+        public DataTable selectMaHoaDon()
+        {
+            string query = "select MaHoaDon from HOADONBANSACH";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+        public DataTable selectMaKHByMaHD(string mahd)
+        {
+            string query = "select MaKhachHang from HOADONBANSACH where MaHoaDon = @mahd";
+            object[] parameters = new object[] { mahd };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
+        public DataTable selectInfoKhachHangByMaHD(string mahd)
+        {
+            string query = "select kh.MaKhachHang, kh.TenKhachHang, kh.DiaChi, kh.Email, kh.SDT  from KHACHHANG kh join HOADONBANSACH hd on kh.MaKhachHang = hd.MaKhachHang where hd.MaHoaDon = @mahd";
+            object[] parameters = new object[] { mahd };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
         public bool insertHoaDon(HoaDonBanSach_DTO hd)
         {
             string query = "insert into HOADONBANSACH values (@mahd, @ngaylap, @makh)";

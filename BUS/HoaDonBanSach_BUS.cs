@@ -34,6 +34,22 @@ namespace BUS
         {
             return HoaDonBanSach_DAO.Instance.selectAllHoaDon();
         }
+        public DataTable selectMaHoaDon()
+        {
+            return HoaDonBanSach_DAO.Instance.selectMaHoaDon();
+        }
+        public DataTable selectMaKHByMaHD(string mahd)
+        {
+            if (mahd != string.Empty)
+                return HoaDonBanSach_DAO.Instance.selectMaKHByMaHD(mahd);
+            return null;
+        }
+        public DataTable selectInfoKhachHangByMaHD(string mahd)
+        {
+            if (mahd != string.Empty)
+                return HoaDonBanSach_DAO.Instance.selectInfoKhachHangByMaHD(mahd);
+            return null;
+        }
         public bool insertHoaDon(HoaDonBanSach_DTO hd)
         {
             if(hd.MaHoaDon != string.Empty && hd.MaKhachHang != string.Empty)

@@ -5,3 +5,4 @@ C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\DTO\obj\Debug\DTO.Properties
 C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\DTO\obj\Debug\DTO.csproj.GenerateResource.Cache
 C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\DTO\obj\Debug\DTO.exe
 C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\DTO\obj\Debug\DTO.pdb
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache

@@ -44,7 +44,12 @@ namespace DAO
             object[] parameters = new object[] { makh };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
-
+        public DataTable selectInfoKhachHangByMaKH(string makh)
+        {
+            string query = "select kh.TenKhachHang, kh.DiaChi, kh.Email, kh.SDT  from KHACHHANG kh where kh.MaKhachHang = @mkh";
+            object[] parameters = new object[] { makh };
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
         //public bool insertKhachHang(KhachHang_DTO kh)
         //{
         //    return true;
@@ -57,5 +62,11 @@ namespace DAO
         //{
         //    return false;
         //}
+        public bool updateTienNoCuaKhSauKhiThanhToanNo(string makh)
+        {
+            string query = "update KHACHHANG set TienNo = 0 where MaKhachHang = @makh";
+            object[] parameters = new object[] { makh };
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
     }
 }

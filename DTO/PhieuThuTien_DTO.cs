@@ -34,9 +34,9 @@ namespace DTO
                 makhachhang = value;
             }
         }
-        private DateTime ngaythutien;
+        private string ngaythutien;
 
-        public DateTime NgayThuTien
+        public string NgayThuTien
         {
             get
             {
@@ -64,10 +64,10 @@ namespace DTO
         {
             this.maphieutien = "";
             this.makhachhang = "";
-            this.ngaythutien = new DateTime();
+            this.ngaythutien = "";
             this.sotienthu = 0;
         }
-        public PhieuThuTien_DTO(string maphieutien, string makhachhang, DateTime ngaythutien, int sotienthu)
+        public PhieuThuTien_DTO(string maphieutien, string makhachhang, string ngaythutien, int sotienthu)
         {
             this.maphieutien = maphieutien;
             this.makhachhang = makhachhang;

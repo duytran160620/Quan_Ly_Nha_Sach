@@ -126,6 +126,9 @@
     <EmbeddedResource Include="FormPhieuNhapSach.resx">
       <DependentUpon>FormPhieuNhapSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPhieuThuTien.resx">
+      <DependentUpon>FormPhieuThuTien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

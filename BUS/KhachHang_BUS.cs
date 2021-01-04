@@ -45,5 +45,18 @@ namespace BUS
                 return KhachHang_DAO.Instance.selectTienNoCuaKhachHangByMaKH(makh);
             return null;
         }
+        public DataTable selectInfoKhachHangByMaKH(string makh)
+        {
+            if (makh != string.Empty)
+                return KhachHang_DAO.Instance.selectInfoKhachHangByMaKH(makh);
+            return null;
+        }
+
+        public bool updateTienNoCuaKhSauKhiThanhToanNo(string makh)
+        {
+            if (makh != string.Empty)
+                return KhachHang_DAO.Instance.updateTienNoCuaKhSauKhiThanhToanNo(makh);
+            return false;
+        }
     }
 }

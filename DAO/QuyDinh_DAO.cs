@@ -38,5 +38,10 @@ namespace DAO
             string query = "select TienNoToiDa , SoLuongTonToiThieuSauKhiBan from QUYDINH";
             return DataProvider.Instance.ExecuteQuery(query);
         }
+        public DataTable selectThamSoQD_4()
+        {
+            string query = "select DuocThuVuotSoTienKhachHangDangNo from QUYDINH";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }
