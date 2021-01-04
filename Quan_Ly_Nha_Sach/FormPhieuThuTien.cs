@@ -192,12 +192,12 @@ namespace Quan_Ly_Nha_Sach
                 {
                     if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thành công");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thành công");
                         MessageBox.Show(mess, "Thông báo");
                     }
                     else
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thất bại");
                         MessageBox.Show(mess, "Thông báo");
                     }
                 }
@@ -206,7 +206,7 @@ namespace Quan_Ly_Nha_Sach
 
                     if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thành công");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thành công");
                         MessageBox.Show(mess, "Thông báo");
                         if (checkBoxYes.Checked == true) // khách hàng đồng ý thanh toán nợ
                         {
@@ -216,7 +216,7 @@ namespace Quan_Ly_Nha_Sach
                     }
                     else
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thất bại");
                         MessageBox.Show(mess, "Thông báo");
                     }
 
@@ -226,12 +226,12 @@ namespace Quan_Ly_Nha_Sach
 
                     if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thành công");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thành công");
                         MessageBox.Show(mess, "Thông báo");
                     }
                     else
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thất bại");
                         MessageBox.Show(mess, "Thông báo");
                     }
 
@@ -240,18 +240,18 @@ namespace Quan_Ly_Nha_Sach
                 {
                     if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thành công");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thành công");
                         MessageBox.Show(mess, "Thông báo");
                     }
                     else
                     {
-                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                        string mess = string.Format("Cập nhật phiếu thu tiền thất bại");
                         MessageBox.Show(mess, "Thông báo");
                     }
                 }
                 else if (quydinh == 4) // sử dụng quy định 4: khách hàng này nợ tiền và khách hàng này không thỏa quy định 4
                 {
-                    string mess = string.Format("Thêm phiếu thu tiền thất bại, vì số tiền thu của khách hàng {0} vượt quá số tiền đang nợ", item.MaKhachHang);
+                    string mess = string.Format("Cập nhật phiếu thu tiền thất bại, vì số tiền thu của khách hàng {0} vượt quá số tiền đang nợ", item.MaKhachHang);
                     MessageBox.Show(mess, "Thông báo");
                 }
             }
