@@ -104,23 +104,31 @@ namespace BUS
             DataTable dt = selectThamSoQD_4();
             foreach (DataRow row in dt.Rows)
             {
-                if (Convert.ToBoolean(row["DuocThuVuotSoTienKhachHangDangNo"].ToString()) == true)// sử dụng quy định 4
+                if (Convert.ToBoolean(row["DuocThuVuotSoTienKhachHangDangNo"].ToString()) == false)// sử dụng quy định 4
                 {
-                    return true;
+                    return false;
                 }
             }
-            return false; //không sử dụng quy định 4
+            return true; //không sử dụng quy định 4
         }
-        public bool checkQD_4(int sotienthu, int sotiendangno)
+        public int checkQD_4(int sotienthu, int sotiendangno)
         {
-            if(ifUseQD_4())
+            if(ifUseQD_4() == false) // không đc thu vượt số tiên khách hàng đang nợ 
             {
-                if(sotienthu <= sotiendangno)
+                if (sotiendangno == 0) 
                 {
-                    return true;
+                    return 1; // khách hàng này không nợ tiền
+                }
+                else if (sotienthu <= sotiendangno && sotiendangno > 0) 
+                {
+                    return 2;//khách hàng này nợ tiền và khách hàng này thỏa quy định 4
                 }
             }
-            return false;
+            else if (ifUseQD_4() == true)// đc thu vượt số tiên khách hàng đang nợ 
+            {
+                return 3;
+            }
+            return 4; //khách hàng này nợ tiền và khách hàng này không thỏa quy định 4
         }
         public DataTable selectThamSoQD_1()
         {

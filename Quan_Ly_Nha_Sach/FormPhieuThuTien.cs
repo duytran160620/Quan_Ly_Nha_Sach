@@ -73,9 +73,9 @@ namespace Quan_Ly_Nha_Sach
             DataTable dt = KhachHang_BUS.Instance.selectTienNoCuaKhachhangByMaKH(pt.MaKhachHang);
             DataRow row = dt.Rows[0];
             int tienocuakh = int.Parse(row["TienNo"].ToString());
-            bool quydinh = QuyDinh_BUS.Instance.checkQD_4(pt.SoTienThu, tienocuakh);
+            int quydinh = QuyDinh_BUS.Instance.checkQD_4(pt.SoTienThu, tienocuakh);
 
-            if (tienocuakh == 0)
+            if (quydinh == 1) // khách hàng này không nợ và được mua sách thoải mái
             {
                 if (PhieuThuTien_BUS.Instance.insertPhieuThuTien(pt))
                 {
@@ -88,7 +88,7 @@ namespace Quan_Ly_Nha_Sach
                     MessageBox.Show(mess, "Thông báo");
                 }
             }
-            else if (quydinh == true)
+            else if (quydinh == 2 && checkBoxYes.Checked == true)//khách hàng này nợ tiền, khách hàng này thỏa quy định 4 và đồng ý thanh toán nợ
             {
 
                 if (PhieuThuTien_BUS.Instance.insertPhieuThuTien(pt))
@@ -108,7 +108,35 @@ namespace Quan_Ly_Nha_Sach
                 }
 
             }
-            else if (quydinh == false)
+            else if (quydinh == 2 && checkBoxNo.Checked == true)//khách hàng này nợ tiền, khách hàng này thỏa quy định 4 và không đồng ý thanh toán nợ
+            {
+
+                if (PhieuThuTien_BUS.Instance.insertPhieuThuTien(pt))
+                {
+                    string mess = string.Format("Thêm phiếu thu tiền thành công");
+                    MessageBox.Show(mess, "Thông báo");
+                }
+                else
+                {
+                    string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                    MessageBox.Show(mess, "Thông báo");
+                }
+
+            }
+            else if (quydinh == 3) // không sử dụng quy định 4 => đc thu vượt số tiên khách hàng đang nợ 
+            {
+                if (PhieuThuTien_BUS.Instance.insertPhieuThuTien(pt))
+                {
+                    string mess = string.Format("Thêm phiếu thu tiền thành công");
+                    MessageBox.Show(mess, "Thông báo");
+                }
+                else
+                {
+                    string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                    MessageBox.Show(mess, "Thông báo");
+                }
+            }
+            else if (quydinh == 4) // sử dụng quy định 4: khách hàng này nợ tiền và khách hàng này không thỏa quy định 4
             {
                 string mess = string.Format("Thêm phiếu thu tiền thất bại, vì số tiền thu của khách hàng {0} vượt quá số tiền đang nợ", pt.MaKhachHang);
                 MessageBox.Show(mess, "Thông báo");
@@ -158,45 +186,73 @@ namespace Quan_Ly_Nha_Sach
                 DataTable dt = KhachHang_BUS.Instance.selectTienNoCuaKhachhangByMaKH(item.MaKhachHang);
                 DataRow row = dt.Rows[0];
                 int tienocuakh = int.Parse(row["TienNo"].ToString());
-                bool quydinh = QuyDinh_BUS.Instance.checkQD_4(item.SoTienThu, tienocuakh);
+                int quydinh = QuyDinh_BUS.Instance.checkQD_4(item.SoTienThu, tienocuakh);
 
-                if (tienocuakh == 0)
+                if (quydinh == 1) // khách hàng này không nợ và được mua sách thoải mái
                 {
                     if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
                     {
-                        string mess = string.Format("Cập nhật phiếu thu tiền thành công");
+                        string mess = string.Format("Thêm phiếu thu tiền thành công");
                         MessageBox.Show(mess, "Thông báo");
-                        
                     }
                     else
                     {
-                        string mess = string.Format("Cập nhật phiếu thu tiền thất bại");
+                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
                         MessageBox.Show(mess, "Thông báo");
-                        
                     }
                 }
-                else if (quydinh == true)
+                else if (quydinh == 2 && checkBoxYes.Checked == true)//khách hàng này nợ tiền, khách hàng này thỏa quy định 4 và đồng ý thanh toán nợ
                 {
 
                     if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
                     {
-                        string mess = string.Format("Cập nhật phiếu thu tiền thành công");
+                        string mess = string.Format("Thêm phiếu thu tiền thành công");
                         MessageBox.Show(mess, "Thông báo");
-                        
+                        if (checkBoxYes.Checked == true) // khách hàng đồng ý thanh toán nợ
+                        {
+                            // cập nhật tiền nợ của khách hàng đó về 0
+                            KhachHang_BUS.Instance.updateTienNoCuaKhSauKhiThanhToanNo(item.MaKhachHang);
+                        }
                     }
                     else
                     {
-                        string mess = string.Format("Cập nhật phiếu thu tiền thất bại");
+                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
                         MessageBox.Show(mess, "Thông báo");
-                        
                     }
 
                 }
-                else if (quydinh == false)
+                else if (quydinh == 2 && checkBoxNo.Checked == true)//khách hàng này nợ tiền, khách hàng này thỏa quy định 4 và không đồng ý thanh toán nợ
                 {
-                    string mess = string.Format("Cập nhật phiếu thu tiền thất bại, vì số tiền thu của khách hàng {0} vượt quá số tiền đang nợ", item.MaKhachHang);
+
+                    if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
+                    {
+                        string mess = string.Format("Thêm phiếu thu tiền thành công");
+                        MessageBox.Show(mess, "Thông báo");
+                    }
+                    else
+                    {
+                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                        MessageBox.Show(mess, "Thông báo");
+                    }
+
+                }
+                else if (quydinh == 3) // không sử dụng quy định 4 => đc thu vượt số tiên khách hàng đang nợ 
+                {
+                    if (PhieuThuTien_BUS.Instance.updatePhieuThuTien(item))
+                    {
+                        string mess = string.Format("Thêm phiếu thu tiền thành công");
+                        MessageBox.Show(mess, "Thông báo");
+                    }
+                    else
+                    {
+                        string mess = string.Format("Thêm phiếu thu tiền thất bại");
+                        MessageBox.Show(mess, "Thông báo");
+                    }
+                }
+                else if (quydinh == 4) // sử dụng quy định 4: khách hàng này nợ tiền và khách hàng này không thỏa quy định 4
+                {
+                    string mess = string.Format("Thêm phiếu thu tiền thất bại, vì số tiền thu của khách hàng {0} vượt quá số tiền đang nợ", item.MaKhachHang);
                     MessageBox.Show(mess, "Thông báo");
-                    
                 }
             }
             loadDanhSachCacPhieuThuTienDaLap();
