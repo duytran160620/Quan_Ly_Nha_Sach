@@ -37,6 +37,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnQuanLySach = new System.Windows.Forms.Button();
             this.btnThayDoiQuyDinh = new System.Windows.Forms.Button();
             this.btnCongNo = new System.Windows.Forms.Button();
             this.btnBaoCaoTon = new System.Windows.Forms.Button();
@@ -50,7 +52,7 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 224);
+            this.label1.Location = new System.Drawing.Point(5, 187);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(163, 23);
             this.label1.TabIndex = 8;
@@ -60,7 +62,7 @@
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(204, 224);
+            this.label2.Location = new System.Drawing.Point(194, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 23);
             this.label2.TabIndex = 9;
@@ -70,7 +72,7 @@
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(361, 228);
+            this.label3.Location = new System.Drawing.Point(197, 512);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 23);
             this.label3.TabIndex = 10;
@@ -80,7 +82,7 @@
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(518, 228);
+            this.label4.Location = new System.Drawing.Point(354, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 23);
             this.label4.TabIndex = 11;
@@ -90,7 +92,7 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 415);
+            this.label5.Location = new System.Drawing.Point(14, 347);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 23);
             this.label5.TabIndex = 12;
@@ -100,7 +102,7 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(213, 415);
+            this.label6.Location = new System.Drawing.Point(28, 512);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(120, 23);
             this.label6.TabIndex = 13;
@@ -110,7 +112,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(361, 415);
+            this.label7.Location = new System.Drawing.Point(357, 512);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(120, 23);
             this.label7.TabIndex = 14;
@@ -120,7 +122,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(518, 415);
+            this.label8.Location = new System.Drawing.Point(194, 347);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(120, 23);
             this.label8.TabIndex = 15;
@@ -133,15 +135,35 @@
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(12, 9);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(669, 52);
+            this.label9.Size = new System.Drawing.Size(496, 52);
             this.label9.TabIndex = 16;
             this.label9.Text = "QUẢN LÝ NHÀ SÁCH";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(360, 347);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(120, 23);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Quản lý sách";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnQuanLySach
+            // 
+            this.btnQuanLySach.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_book_96;
+            this.btnQuanLySach.Location = new System.Drawing.Point(360, 224);
+            this.btnQuanLySach.Name = "btnQuanLySach";
+            this.btnQuanLySach.Size = new System.Drawing.Size(120, 120);
+            this.btnQuanLySach.TabIndex = 17;
+            this.btnQuanLySach.UseVisualStyleBackColor = true;
+            this.btnQuanLySach.Click += new System.EventHandler(this.btnQuanLySach_Click);
+            // 
             // btnThayDoiQuyDinh
             // 
             this.btnThayDoiQuyDinh.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_direction_96;
-            this.btnThayDoiQuyDinh.Location = new System.Drawing.Point(518, 292);
+            this.btnThayDoiQuyDinh.Location = new System.Drawing.Point(197, 224);
             this.btnThayDoiQuyDinh.Name = "btnThayDoiQuyDinh";
             this.btnThayDoiQuyDinh.Size = new System.Drawing.Size(120, 120);
             this.btnThayDoiQuyDinh.TabIndex = 7;
@@ -151,7 +173,7 @@
             // btnCongNo
             // 
             this.btnCongNo.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_combo_chart_96;
-            this.btnCongNo.Location = new System.Drawing.Point(361, 292);
+            this.btnCongNo.Location = new System.Drawing.Point(357, 389);
             this.btnCongNo.Name = "btnCongNo";
             this.btnCongNo.Size = new System.Drawing.Size(120, 120);
             this.btnCongNo.TabIndex = 6;
@@ -161,7 +183,7 @@
             // btnBaoCaoTon
             // 
             this.btnBaoCaoTon.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_futures_96;
-            this.btnBaoCaoTon.Location = new System.Drawing.Point(213, 292);
+            this.btnBaoCaoTon.Location = new System.Drawing.Point(31, 389);
             this.btnBaoCaoTon.Name = "btnBaoCaoTon";
             this.btnBaoCaoTon.Size = new System.Drawing.Size(120, 120);
             this.btnBaoCaoTon.TabIndex = 5;
@@ -171,7 +193,7 @@
             // btnQuanLyKH
             // 
             this.btnQuanLyKH.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_user_groups_96;
-            this.btnQuanLyKH.Location = new System.Drawing.Point(53, 292);
+            this.btnQuanLyKH.Location = new System.Drawing.Point(31, 224);
             this.btnQuanLyKH.Name = "btnQuanLyKH";
             this.btnQuanLyKH.Size = new System.Drawing.Size(120, 120);
             this.btnQuanLyKH.TabIndex = 4;
@@ -181,7 +203,7 @@
             // btnLapPhieuThuTien
             // 
             this.btnLapPhieuThuTien.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_cash_in_hand_96;
-            this.btnLapPhieuThuTien.Location = new System.Drawing.Point(517, 101);
+            this.btnLapPhieuThuTien.Location = new System.Drawing.Point(354, 64);
             this.btnLapPhieuThuTien.Name = "btnLapPhieuThuTien";
             this.btnLapPhieuThuTien.Size = new System.Drawing.Size(120, 120);
             this.btnLapPhieuThuTien.TabIndex = 3;
@@ -191,7 +213,7 @@
             // btnTimSach
             // 
             this.btnTimSach.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_search_96;
-            this.btnTimSach.Location = new System.Drawing.Point(361, 101);
+            this.btnTimSach.Location = new System.Drawing.Point(197, 389);
             this.btnTimSach.Name = "btnTimSach";
             this.btnTimSach.Size = new System.Drawing.Size(120, 120);
             this.btnTimSach.TabIndex = 2;
@@ -201,7 +223,7 @@
             // btnLapHoaDon
             // 
             this.btnLapHoaDon.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_receipt_dollar_96;
-            this.btnLapHoaDon.Location = new System.Drawing.Point(207, 101);
+            this.btnLapHoaDon.Location = new System.Drawing.Point(194, 64);
             this.btnLapHoaDon.Name = "btnLapHoaDon";
             this.btnLapHoaDon.Size = new System.Drawing.Size(120, 120);
             this.btnLapHoaDon.TabIndex = 1;
@@ -211,7 +233,7 @@
             // btnLapPhieuNhapSach
             // 
             this.btnLapPhieuNhapSach.Image = global::Quan_Ly_Nha_Sach.Properties.Resources.icons8_add_book_96;
-            this.btnLapPhieuNhapSach.Location = new System.Drawing.Point(53, 101);
+            this.btnLapPhieuNhapSach.Location = new System.Drawing.Point(31, 64);
             this.btnLapPhieuNhapSach.Name = "btnLapPhieuNhapSach";
             this.btnLapPhieuNhapSach.Size = new System.Drawing.Size(120, 120);
             this.btnLapPhieuNhapSach.TabIndex = 0;
@@ -222,7 +244,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 462);
+            this.ClientSize = new System.Drawing.Size(520, 563);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btnQuanLySach);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -265,5 +289,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnQuanLySach;
+        private System.Windows.Forms.Label label10;
     }
 }

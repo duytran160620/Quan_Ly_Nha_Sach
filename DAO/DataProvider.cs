@@ -31,8 +31,12 @@ namespace DAO
                 DataProvider.instance = value;
             }
         }
-        
 
+        public bool setFormatDate()
+        {
+            string query = "SET DATEFORMAT dmy";
+            return ExecuteNonQuery(query);
+        }
         private void openConnection()
         {
             if (connection.State == ConnectionState.Closed)
@@ -138,6 +142,7 @@ namespace DAO
             return result;
         }
 
+        
         
     }
 

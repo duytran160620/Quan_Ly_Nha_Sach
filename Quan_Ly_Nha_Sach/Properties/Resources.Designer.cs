@@ -73,6 +73,16 @@ namespace Quan_Ly_Nha_Sach.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_book_96 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-book-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cash_in_hand_96 {
             get {
                 object obj = ResourceManager.GetObject("icons8-cash-in-hand-96", resourceCulture);

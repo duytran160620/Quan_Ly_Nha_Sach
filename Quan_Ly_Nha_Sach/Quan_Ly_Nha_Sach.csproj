@@ -102,6 +102,12 @@
     <Compile Include="FormQuanLyKhachHang.Designer.cs">
       <DependentUpon>FormQuanLyKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormQuanLySach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormQuanLySach.Designer.cs">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThayDoiQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBaoCaoCongNo.resx">
+      <DependentUpon>FormBaoCaoCongNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBaoCaoTon.resx">
+      <DependentUpon>FormBaoCaoTon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormHoaDonBanSach.resx">
       <DependentUpon>FormHoaDonBanSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPhieuThuTien.resx">
       <DependentUpon>FormPhieuThuTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormQuanLySach.resx">
+      <DependentUpon>FormQuanLySach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -182,6 +197,7 @@
   <ItemGroup>
     <Content Include="Resources\icons8-add-book-96.png" />
     <Content Include="Resources\icons8-book-96.png" />
+    <None Include="Resources\icons8-book-961.png" />
     <Content Include="Resources\icons8-cash-in-hand-96.png" />
     <Content Include="Resources\icons8-combo-chart-96.png" />
     <Content Include="Resources\icons8-create-document-96.png" />

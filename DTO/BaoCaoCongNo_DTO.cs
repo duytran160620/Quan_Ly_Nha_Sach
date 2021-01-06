@@ -34,17 +34,31 @@ namespace DTO
                 thang = value;
             }
         }
+        private int nam;
 
+        public int Nam
+        {
+            get
+            {
+                return nam;
+            }
+            set
+            {
+                nam = value;
+            }
+        }
         public BaoCaoCongNo_DTO()
         {
             this.mabaocaocongno = "";
             this.thang = 0;
+            this.nam = 0;
         }
 
-        public BaoCaoCongNo_DTO(string mabaocaocongno, int thang)
+        public BaoCaoCongNo_DTO(string mabaocaocongno, int thang, int nam)
         {
             this.mabaocaocongno = mabaocaocongno;
             this.thang = thang;
+            this.nam = nam;
         }
     }
 }

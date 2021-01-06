@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCaoCongNo.cs" />
-    <Compile Include="BaoCaoTon.cs" />
+    <Compile Include="BaoCaoCongNo_DAO.cs" />
+    <Compile Include="BaoCaoTon_DAO.cs" />
     <Compile Include="ChiTietBaoCaoCongNo_DAO.cs" />
     <Compile Include="ChiTietBaoCaoTon_DAO.cs" />
     <Compile Include="ChiTietHoaDonBanSach_DAO.cs" />

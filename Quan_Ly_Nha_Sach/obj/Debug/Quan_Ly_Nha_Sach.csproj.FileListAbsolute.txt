@@ -18,3 +18,6 @@ C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\Quan_Ly_Nha_Sach\bin\Debug\D
 C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\Quan_Ly_Nha_Sach\obj\Debug\Quan_Ly_Nha_Sach.exe
 C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\Quan_Ly_Nha_Sach\obj\Debug\Quan_Ly_Nha_Sach.pdb
 C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\Quan_Ly_Nha_Sach\obj\Debug\Quan_Ly_Nha_Sach.FormPhieuThuTien.resources
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\Quan_Ly_Nha_Sach\obj\Debug\Quan_Ly_Nha_Sach.FormBaoCaoCongNo.resources
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\Quan_Ly_Nha_Sach\obj\Debug\Quan_Ly_Nha_Sach.FormBaoCaoTon.resources
+C:\Users\Public\Documents\Do_An_C#\Quan_Ly_Nha_Sach\Quan_Ly_Nha_Sach\obj\Debug\Quan_Ly_Nha_Sach.FormQuanLySach.resources

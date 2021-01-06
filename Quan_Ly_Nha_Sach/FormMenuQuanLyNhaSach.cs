@@ -65,5 +65,11 @@ namespace Quan_Ly_Nha_Sach
             FormThayDoiQuyDinh quydinh = new FormThayDoiQuyDinh();
             quydinh.Show();
         }
+
+        private void btnQuanLySach_Click(object sender, EventArgs e)
+        {
+            FormQuanLySach sach = new FormQuanLySach();
+            sach.Show();
+        }
     }
 }
