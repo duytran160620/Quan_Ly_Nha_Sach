@@ -43,7 +43,7 @@ namespace Quan_Ly_Nha_Sach
             {
                 string mess = string.Format("Thêm báo cáo tồn {0} thành công", baocao.MaBaoCaoTon);
                 MessageBox.Show(mess, "Thông báo");
-                load();
+                loadBaoCaoChotatCaMaSach();
             }
             else
             {
@@ -155,7 +155,7 @@ namespace Quan_Ly_Nha_Sach
 
         
 
-        void load()
+        void loadBaoCaoChotatCaMaSach()
         {
             DataGridViewRow selectedRow = dataGVBaoCaoTon.Rows[dataGVBaoCaoTon.CurrentCell.RowIndex];
 
