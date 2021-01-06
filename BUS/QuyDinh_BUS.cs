@@ -142,5 +142,9 @@ namespace BUS
         {
             return QuyDinh_DAO.Instance.selectThamSoQD_4();
         }
+        public bool updateQuyDinh(QuyDinh_DTO qd)
+        {
+            return QuyDinh_DAO.Instance.updateQuyDinh(qd);
+        }
     }
 }

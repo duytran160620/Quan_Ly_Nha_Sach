@@ -212,6 +212,14 @@ namespace Quan_Ly_Nha_Sach
                 }
             }
 
+            string soluongnhap = "";
+            string soluongtoithieudenhap = "";
+            DataTable dt = QuyDinh_BUS.Instance.selectThamSoQD_1();
+            foreach (DataRow row in dt.Rows)
+            {
+                soluongnhap = row["SoLuongNhapToiThieu"].ToString();
+                soluongtoithieudenhap = row["SoLuongTonToiThieuDeNhap"].ToString();
+            }
 
             for (int i = 0; i < listCT.Count; i++)
             {
@@ -219,12 +227,12 @@ namespace Quan_Ly_Nha_Sach
                 
                 if (quydinh == 1)
                 {
-                    string mess = string.Format("Không thêm được mã sách {0} vì số lượng nhập phải ít nhất là 150", listCT[i].MaSach);
+                    string mess = string.Format("Không thêm được mã sách {0} vì số lượng nhập phải ít nhất là {1}", listCT[i].MaSach, soluongnhap);
                     MessageBox.Show(mess, "Thông báo");
                 }
                 else if (quydinh == 2)
                 {
-                    string mess = string.Format("Không thêm được mã sách {0} vì số lượng tồn tối thiểu phải ít hơn là 300", listCT[i].MaSach);
+                    string mess = string.Format("Không thêm được mã sách {0} vì số lượng tồn tối thiểu phải ít hơn là {1}", listCT[i].MaSach, soluongtoithieudenhap);
                     MessageBox.Show(mess, "Thông báo");
                 }
                 else if (quydinh == 3)
@@ -277,17 +285,25 @@ namespace Quan_Ly_Nha_Sach
                     }
                 }
             }
+            string soluongnhap = "";
+            string soluongtoithieudenhap = "";
+            DataTable dt = QuyDinh_BUS.Instance.selectThamSoQD_1();
+            foreach (DataRow row in dt.Rows)
+            {
+                soluongnhap = row["SoLuongNhapToiThieu"].ToString();
+                soluongtoithieudenhap = row["SoLuongTonToiThieuDeNhap"].ToString();
+            }
             for (int i = 0; i < listCT.Count; i++)
             {
                 int quydinh = QuyDinh_BUS.Instance.checkQD_1(listCT[i].SoLuongNhap, listSach[i].SoLuongTon);
                 if (quydinh == 1)
                 {
-                    string mess = string.Format("Không cập nhật được mã sách {0} vì số lượng nhập phải ít nhất là 150", listCT[i].MaSach);
+                    string mess = string.Format("Không cập nhật được mã sách {0} vì số lượng nhập phải ít nhất là {1}", listCT[i].MaSach, soluongnhap);
                     MessageBox.Show(mess, "Thông báo");
                 }
                 else if (quydinh == 2)
                 {
-                    string mess = string.Format("Không cập nhật được mã sách {0} vì số lượng tồn tối thiểu phải ít hơn là 300", listCT[i].MaSach);
+                    string mess = string.Format("Không cập nhật được mã sách {0} vì số lượng tồn tối thiểu phải ít hơn là {1}", listCT[i].MaSach, soluongtoithieudenhap);
                     MessageBox.Show(mess, "Thông báo");
                 }
                 else if (quydinh == 3)

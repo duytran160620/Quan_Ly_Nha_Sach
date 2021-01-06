@@ -74,6 +74,7 @@ namespace Quan_Ly_Nha_Sach
             DataRow row = dt.Rows[0];
             int tienNoCuaKH = int.Parse(row["TienNo"].ToString());
             bool quydinh = QuyDinh_BUS.Instance.checkTienNoCuaKhachHang(tienNoCuaKH);
+            
             if(quydinh)
             {
                 if(HoaDonBanSach_BUS.Instance.insertHoaDon(hd))

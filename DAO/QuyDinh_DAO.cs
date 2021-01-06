@@ -43,5 +43,20 @@ namespace DAO
             string query = "select DuocThuVuotSoTienKhachHangDangNo from QUYDINH";
             return DataProvider.Instance.ExecuteQuery(query);
         }
+
+        public bool updateQuyDinh(QuyDinh_DTO qd)
+        {
+            string query = "update QUYDINH set SoLuongNhapToiThieu = @soluongnhaptoithieu, SoLuongTonToiThieuDeNhap = @soluongtoithieudenhap, TienNoToiDa = @tiennotoida, SoLuongTonToiThieuSauKhiBan = @soluongtontoithieusaukhiban, DuocThuVuotSoTienKhachHangDangNo = @apdung";
+            object[] parameters = new object[] 
+            {
+                qd.SoLuongNhapToiThieu,
+                qd.SoLuongTonToiThieuDeNhap,
+                qd.TienNoToiDa,
+                qd.SoLuongTonToiThieuSauKhiBan,
+                qd.DuocThuVuotSoTienKhachDangNo
+            };
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
+        
     }
 }

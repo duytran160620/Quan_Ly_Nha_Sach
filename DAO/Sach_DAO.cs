@@ -114,6 +114,8 @@ namespace DAO
             object[] parameters = new object[] { masach, soluongnhap};
             return DataProvider.Instance.ExecuteNonQuery(query, parameters);
         }
+
+
         
         
     }
