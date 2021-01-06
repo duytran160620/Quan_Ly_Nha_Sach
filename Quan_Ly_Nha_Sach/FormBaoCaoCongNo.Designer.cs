@@ -34,16 +34,13 @@
             this.btnLapBaoCaoCongNo = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXemCTBaoCaoCongNo = new System.Windows.Forms.Button();
-            this.btnXoaCTBaoCaoCongNo = new System.Windows.Forms.Button();
-            this.btnCapNhatCTBaoCaoCongNo = new System.Windows.Forms.Button();
             this.btnLapCTBaoCaoCongNo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGVBaoCaoCongNo = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,13 +48,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtThang = new System.Windows.Forms.TextBox();
             this.txtMaBaoCaoCongNo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVCTBaoCaoCongNo)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVBaoCaoCongNo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,32 +124,15 @@
             this.btnXemCTBaoCaoCongNo.UseVisualStyleBackColor = true;
             this.btnXemCTBaoCaoCongNo.Click += new System.EventHandler(this.btnXemCTBaoCaoCongNo_Click);
             // 
-            // btnXoaCTBaoCaoCongNo
-            // 
-            this.btnXoaCTBaoCaoCongNo.Location = new System.Drawing.Point(496, 521);
-            this.btnXoaCTBaoCaoCongNo.Name = "btnXoaCTBaoCaoCongNo";
-            this.btnXoaCTBaoCaoCongNo.Size = new System.Drawing.Size(170, 37);
-            this.btnXoaCTBaoCaoCongNo.TabIndex = 22;
-            this.btnXoaCTBaoCaoCongNo.Text = "Xóa chi tiết báo cáo công nợ";
-            this.btnXoaCTBaoCaoCongNo.UseVisualStyleBackColor = true;
-            // 
-            // btnCapNhatCTBaoCaoCongNo
-            // 
-            this.btnCapNhatCTBaoCaoCongNo.Location = new System.Drawing.Point(241, 521);
-            this.btnCapNhatCTBaoCaoCongNo.Name = "btnCapNhatCTBaoCaoCongNo";
-            this.btnCapNhatCTBaoCaoCongNo.Size = new System.Drawing.Size(200, 37);
-            this.btnCapNhatCTBaoCaoCongNo.TabIndex = 21;
-            this.btnCapNhatCTBaoCaoCongNo.Text = "Cập nhật chi tiết báo cáo công nợ";
-            this.btnCapNhatCTBaoCaoCongNo.UseVisualStyleBackColor = true;
-            // 
             // btnLapCTBaoCaoCongNo
             // 
-            this.btnLapCTBaoCaoCongNo.Location = new System.Drawing.Point(8, 521);
+            this.btnLapCTBaoCaoCongNo.Location = new System.Drawing.Point(250, 521);
             this.btnLapCTBaoCaoCongNo.Name = "btnLapCTBaoCaoCongNo";
             this.btnLapCTBaoCaoCongNo.Size = new System.Drawing.Size(175, 37);
             this.btnLapCTBaoCaoCongNo.TabIndex = 20;
             this.btnLapCTBaoCaoCongNo.Text = "Lập chi tiết báo cáo công nợ";
             this.btnLapCTBaoCaoCongNo.UseVisualStyleBackColor = true;
+            this.btnLapCTBaoCaoCongNo.Click += new System.EventHandler(this.btnLapCTBaoCaoCongNo_Click);
             // 
             // panel3
             // 
@@ -180,25 +161,6 @@
             this.panel2.Size = new System.Drawing.Size(280, 192);
             this.panel2.TabIndex = 17;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Location = new System.Drawing.Point(15, 55);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(365, 118);
-            this.panel1.TabIndex = 16;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(11, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(655, 44);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "BÁO CÁO CÔNG NỢ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGVBaoCaoCongNo);
@@ -218,6 +180,14 @@
             this.dataGVBaoCaoCongNo.Name = "dataGVBaoCaoCongNo";
             this.dataGVBaoCaoCongNo.Size = new System.Drawing.Size(274, 173);
             this.dataGVBaoCaoCongNo.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Location = new System.Drawing.Point(15, 55);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(365, 118);
+            this.panel1.TabIndex = 16;
             // 
             // groupBox1
             // 
@@ -283,14 +253,23 @@
             this.txtMaBaoCaoCongNo.Size = new System.Drawing.Size(125, 20);
             this.txtMaBaoCaoCongNo.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(11, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(655, 44);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "BÁO CÁO CÔNG NỢ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormBaoCaoCongNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 567);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.btnXoaCTBaoCaoCongNo);
-            this.Controls.Add(this.btnCapNhatCTBaoCaoCongNo);
             this.Controls.Add(this.btnLapCTBaoCaoCongNo);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label5);
@@ -303,9 +282,9 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGVBaoCaoCongNo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -320,8 +299,6 @@
         private System.Windows.Forms.Button btnLapBaoCaoCongNo;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnXemCTBaoCaoCongNo;
-        private System.Windows.Forms.Button btnXoaCTBaoCaoCongNo;
-        private System.Windows.Forms.Button btnCapNhatCTBaoCaoCongNo;
         private System.Windows.Forms.Button btnLapCTBaoCaoCongNo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;

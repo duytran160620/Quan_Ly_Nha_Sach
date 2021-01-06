@@ -33,10 +33,10 @@ namespace DAO
             object[] parameters = new object[] { mabaocaocongno };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
-        public DataTable selectTongHoaDonVaSoTienThu(string makh, int thang, int nam)
+        public DataTable baoCaoCongNo(int thang, int nam)
         {
-            string query = "SET DATEFORMAT dmy; select sum(ct.SoLuongBan * ct.DonGiaBan) as TongTienHoaDon, ptt.SoTienThu from HOADONBANSACH hd join CHITIETHOADONBANSACH ct on hd.MaHoaDon = ct.MaHoaDon join PHIEUTHUTIEN ptt on hd.MaKhachHang = ptt.MaKhachHang where month(hd.NgayLapHoaDon) = 8 and year(hd.NgayLapHoaDon) = 2020 and hd.MaKhachHang = 'KH004' and hd.NgayLapHoaDon = ptt.NgayThuTien group by ptt.SoTienThu";
-            object[] parameters = new object[] { thang, nam, makh };
+            string query = "SET DATEFORMAT dmy; select hd.MaKhachHang, kh.TienNo as SoNoDau, (sum(ct.SoLuongBan * ct.DonGiaBan) - ptt.SoTienThu) as PhatSinh, (kh.TienNo + (sum(ct.SoLuongBan * ct.DonGiaBan) - ptt.SoTienThu)) as SoNoCuoi from HOADONBANSACH hd join CHITIETHOADONBANSACH ct on hd.MaHoaDon = ct.MaHoaDon join PHIEUTHUTIEN ptt on hd.MaKhachHang = ptt.MaKhachHang join KHACHHANG kh on kh.MaKhachHang = ptt.MaKhachHang where month(hd.NgayLapHoaDon) = @thang and year(hd.NgayLapHoaDon) = @nam group by ptt.SoTienThu, hd.MaKhachHang, kh.TienNo";
+            object[] parameters = new object[] { thang, nam };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
         public bool insertChiTietBaoCaoCongNo(ChiTietBaoCaoCongNo_DTO ct)
