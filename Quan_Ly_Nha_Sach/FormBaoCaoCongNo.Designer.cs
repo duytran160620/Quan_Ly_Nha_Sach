@@ -49,6 +49,8 @@
             this.txtThang = new System.Windows.Forms.TextBox();
             this.txtMaBaoCaoCongNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCapNhatCTBaoCaoCongNo = new System.Windows.Forms.Button();
+            this.btnXoaChiTietBaoCaoCongNo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGVCTBaoCaoCongNo)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -126,7 +128,7 @@
             // 
             // btnLapCTBaoCaoCongNo
             // 
-            this.btnLapCTBaoCaoCongNo.Location = new System.Drawing.Point(250, 521);
+            this.btnLapCTBaoCaoCongNo.Location = new System.Drawing.Point(8, 521);
             this.btnLapCTBaoCaoCongNo.Name = "btnLapCTBaoCaoCongNo";
             this.btnLapCTBaoCaoCongNo.Size = new System.Drawing.Size(175, 37);
             this.btnLapCTBaoCaoCongNo.TabIndex = 20;
@@ -264,11 +266,33 @@
             this.label1.Text = "BÁO CÁO CÔNG NỢ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCapNhatCTBaoCaoCongNo
+            // 
+            this.btnCapNhatCTBaoCaoCongNo.Location = new System.Drawing.Point(235, 521);
+            this.btnCapNhatCTBaoCaoCongNo.Name = "btnCapNhatCTBaoCaoCongNo";
+            this.btnCapNhatCTBaoCaoCongNo.Size = new System.Drawing.Size(207, 37);
+            this.btnCapNhatCTBaoCaoCongNo.TabIndex = 24;
+            this.btnCapNhatCTBaoCaoCongNo.Text = "Cập nhật chi tiết báo cáo công nợ";
+            this.btnCapNhatCTBaoCaoCongNo.UseVisualStyleBackColor = true;
+            this.btnCapNhatCTBaoCaoCongNo.Click += new System.EventHandler(this.btnCapNhatCTBaoCaoCongNo_Click);
+            // 
+            // btnXoaChiTietBaoCaoCongNo
+            // 
+            this.btnXoaChiTietBaoCaoCongNo.Location = new System.Drawing.Point(488, 521);
+            this.btnXoaChiTietBaoCaoCongNo.Name = "btnXoaChiTietBaoCaoCongNo";
+            this.btnXoaChiTietBaoCaoCongNo.Size = new System.Drawing.Size(175, 37);
+            this.btnXoaChiTietBaoCaoCongNo.TabIndex = 25;
+            this.btnXoaChiTietBaoCaoCongNo.Text = "Xóa chi tiết báo cáo công nợ";
+            this.btnXoaChiTietBaoCaoCongNo.UseVisualStyleBackColor = true;
+            this.btnXoaChiTietBaoCaoCongNo.Click += new System.EventHandler(this.btnXoaChiTietBaoCaoCongNo_Click);
+            // 
             // FormBaoCaoCongNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 567);
+            this.Controls.Add(this.btnXoaChiTietBaoCaoCongNo);
+            this.Controls.Add(this.btnCapNhatCTBaoCaoCongNo);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnLapCTBaoCaoCongNo);
             this.Controls.Add(this.panel3);
@@ -314,5 +338,7 @@
         private System.Windows.Forms.TextBox txtThang;
         private System.Windows.Forms.TextBox txtMaBaoCaoCongNo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCapNhatCTBaoCaoCongNo;
+        private System.Windows.Forms.Button btnXoaChiTietBaoCaoCongNo;
     }
 }

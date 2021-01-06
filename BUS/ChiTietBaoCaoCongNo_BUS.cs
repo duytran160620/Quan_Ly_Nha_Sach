@@ -32,6 +32,10 @@ namespace BUS
         {
             return ChiTietBaoCaoCongNo_DAO.Instance.selectChiTietBaoCaoCongNoByMaBaoCao(mabaocaocongno);
         }
+        public DataTable selectCTBaoCaoCongNobyMaBaoCao(string mabc)
+        {
+            return ChiTietBaoCaoCongNo_DAO.Instance.selectChiTietBaoCaoCongNoByMaBaoCao(mabc);
+        }
         public DataTable baoCaoCongNo(int thang, int nam)
         {
             return ChiTietBaoCaoCongNo_DAO.Instance.baoCaoCongNo(thang, nam);

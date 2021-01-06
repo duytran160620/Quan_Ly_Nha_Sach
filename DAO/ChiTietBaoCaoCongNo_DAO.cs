@@ -39,6 +39,12 @@ namespace DAO
             object[] parameters = new object[] { thang, nam };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
+        public DataTable selectCTBaoCaoCongNobyMaBaoCao(string mabc)
+        {
+            string query = "select ct.MaKhachHang, ct.SoNoDau, ct.PhatSinh ,ct.SoNoCuoi from CHITIETBAOCAOCONGNO ct where ct.MaBaoCaoCongNo = @mabc";
+            object[] parameters = new object[] { mabc };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
         public bool insertChiTietBaoCaoCongNo(ChiTietBaoCaoCongNo_DTO ct)
         {
             string query = "insert into CHITIETBAOCAOCONGNO values (@mabaocaocongno, @makh, @nodau, @phatsinh, @nocuoi)";

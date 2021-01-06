@@ -49,6 +49,8 @@
             this.btnXoaBaoCaoTon = new System.Windows.Forms.Button();
             this.btnCapNhatBaoCaoTon = new System.Windows.Forms.Button();
             this.btnLapBaoCaoTon = new System.Windows.Forms.Button();
+            this.btnCapNhatCTBaoCaoTon = new System.Windows.Forms.Button();
+            this.btnXoaCTBaoCaoTon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -200,7 +202,7 @@
             // 
             // btnLapCTBaoCaoTon
             // 
-            this.btnLapCTBaoCaoTon.Location = new System.Drawing.Point(239, 522);
+            this.btnLapCTBaoCaoTon.Location = new System.Drawing.Point(9, 522);
             this.btnLapCTBaoCaoTon.Name = "btnLapCTBaoCaoTon";
             this.btnLapCTBaoCaoTon.Size = new System.Drawing.Size(175, 37);
             this.btnLapCTBaoCaoTon.TabIndex = 11;
@@ -259,11 +261,33 @@
             this.btnLapBaoCaoTon.UseVisualStyleBackColor = true;
             this.btnLapBaoCaoTon.Click += new System.EventHandler(this.btnLapBaoCaoTon_Click);
             // 
+            // btnCapNhatCTBaoCaoTon
+            // 
+            this.btnCapNhatCTBaoCaoTon.Location = new System.Drawing.Point(248, 522);
+            this.btnCapNhatCTBaoCaoTon.Name = "btnCapNhatCTBaoCaoTon";
+            this.btnCapNhatCTBaoCaoTon.Size = new System.Drawing.Size(175, 37);
+            this.btnCapNhatCTBaoCaoTon.TabIndex = 15;
+            this.btnCapNhatCTBaoCaoTon.Text = "Cập nhật chi tiết báo cáo";
+            this.btnCapNhatCTBaoCaoTon.UseVisualStyleBackColor = true;
+            this.btnCapNhatCTBaoCaoTon.Click += new System.EventHandler(this.btnCapNhatCTBaoCaoTon_Click);
+            // 
+            // btnXoaCTBaoCaoTon
+            // 
+            this.btnXoaCTBaoCaoTon.Location = new System.Drawing.Point(489, 522);
+            this.btnXoaCTBaoCaoTon.Name = "btnXoaCTBaoCaoTon";
+            this.btnXoaCTBaoCaoTon.Size = new System.Drawing.Size(175, 37);
+            this.btnXoaCTBaoCaoTon.TabIndex = 16;
+            this.btnXoaCTBaoCaoTon.Text = "Xóa chi tiết báo cáo";
+            this.btnXoaCTBaoCaoTon.UseVisualStyleBackColor = true;
+            this.btnXoaCTBaoCaoTon.Click += new System.EventHandler(this.btnXoaCTBaoCaoTon_Click);
+            // 
             // FormBaoCaoTon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 567);
+            this.Controls.Add(this.btnXoaCTBaoCaoTon);
+            this.Controls.Add(this.btnCapNhatCTBaoCaoTon);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btnLapCTBaoCaoTon);
             this.Controls.Add(this.panel3);
@@ -309,5 +333,7 @@
         private System.Windows.Forms.Button btnCapNhatBaoCaoTon;
         private System.Windows.Forms.Button btnLapBaoCaoTon;
         private System.Windows.Forms.DataGridView dataGVCTBaoCaoTon;
+        private System.Windows.Forms.Button btnCapNhatCTBaoCaoTon;
+        private System.Windows.Forms.Button btnXoaCTBaoCaoTon;
     }
 }
