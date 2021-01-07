@@ -29,11 +29,9 @@ namespace BUS
             }
         }
 
-        public int checkIfExistsMaSach(string masach)
+        public DataTable selectDanhSachDauSach()
         {
-            if (masach != "")
-                return Sach_DAO.Instance.checkExistsMaSach(masach);
-            return -1;
+            return Sach_DAO.Instance.selectDanhSachDauSach();
         }
         public DataTable selectMaSach()
         {

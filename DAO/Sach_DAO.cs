@@ -29,11 +29,9 @@ namespace DAO
         }
 
 
-        public int checkExistsMaSach(string masach)
+        public DataTable selectDanhSachDauSach()
         {
-            string query = "select dbo.checkMaSachExists (@masach)";
-            object[] parameters = new object[] { masach };
-            return DataProvider.Instance.ExecuteScalar(query, parameters);
+            return DataProvider.Instance.ExecuteQuery("select * from SACH");
         }
         public DataTable selectMaSach()
         {
@@ -57,7 +55,7 @@ namespace DAO
         }
         public bool insertSach(Sach_DTO sach)
         {
-            string query = "insert into SACH values(@masach, @tensach, @theloai, @tacgia, @soluong, @dongiaban)";
+            string query = "insert into SACH values (@masach, @tensach, @theloai, @tacgia, @soluong, @dongiaban)";
             object[] parameters = new object[] 
             {
                 sach.MaSach,
