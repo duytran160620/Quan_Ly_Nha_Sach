@@ -49,6 +49,22 @@ namespace BUS
                 return Sach_DAO.Instance.selectAllDataBy(masach);
             return null;
         }
+        public DataTable searchByMaSach(string input)
+        {
+            return Sach_DAO.Instance.searchByMaSach(input);
+        }
+        public DataTable searchByTenSach(string input)
+        {
+            return Sach_DAO.Instance.searchByTenSach(input);
+        }
+        public DataTable searchByTheLoai(string input)
+        {
+            return Sach_DAO.Instance.searchByTheLoai(input);
+        }
+        public DataTable  searchByTacGia(string input)
+        {
+            return Sach_DAO.Instance.searchByTacGia(input);
+        }
         public bool insertSach(Sach_DTO sach)
         {
             if(sach.MaSach != string.Empty)

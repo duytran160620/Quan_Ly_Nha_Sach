@@ -53,6 +53,30 @@ namespace DAO
             object[] parameters = new object[] { masach };
             return DataProvider.Instance.ExecuteQuery(query, parameters);
         }
+        public DataTable searchByTenSach(string input)
+        {
+            string query = "select * from SACH s where dbo.fuConvertToUnsign1(lower(s.TenSach)) like N'%' + @input + N'%'";
+            object[] parameters = new object[] { input };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
+        public DataTable searchByTheLoai(string input)
+        {
+            string query = "select * from SACH s where dbo.fuConvertToUnsign1(lower(s.TheLoai)) like N'%' + @input + N'%'";
+            object[] parameters = new object[] { input };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
+        public DataTable searchByTacGia(string input)
+        {
+            string query = "select * from SACH s where dbo.fuConvertToUnsign1(lower(s.TacGia)) like N'%' + @input + N'%'";
+            object[] parameters = new object[] { input };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
+        public DataTable searchByMaSach(string input)
+        {
+            string query = "SELECT MaSach TenSach, TheLoai, TacGia, SoLuongTon, DonGiaBan FROM SACH where MaSach = @input";
+            object[] parameters = new object[] { input };
+            return DataProvider.Instance.ExecuteQuery(query, parameters);
+        }
         public bool insertSach(Sach_DTO sach)
         {
             string query = "insert into SACH values (@masach, @tensach, @theloai, @tacgia, @soluong, @dongiaban)";
