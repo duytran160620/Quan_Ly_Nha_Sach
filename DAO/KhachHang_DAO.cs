@@ -27,6 +27,10 @@ namespace DAO
             }
         }
 
+        public DataTable selectDanhSachKhachHang()
+        {
+            return DataProvider.Instance.ExecuteQuery("select * from KHACHHANG");
+        }
         public DataTable selectAllMaKhachHang()
         {
             string query = "select MaKhachHang from KHACHHANG";
@@ -50,18 +54,43 @@ namespace DAO
             object[] parameters = new object[] { makh };
             return DataProvider.Instance.ExecuteQuery(query);
         }
-        //public bool insertKhachHang(KhachHang_DTO kh)
-        //{
-        //    return true;
-        //}
-        //public bool updateKhachHang(KhachHang_DTO kh)
-        //{
-        //    return true;
-        //}
-        //public bool deleteKhachHang(KhachHang_DTO kh)
-        //{
-        //    return false;
-        //}
+        public bool insertKhachHang(KhachHang_DTO kh)
+        {
+            string query = "insert into KHACHHANG values (@makh, @tenkh, @email, @sdt, @diachi, @tienno)";
+            object[] parameters = new object[] 
+            {
+                kh.MaKhachHang,
+                kh.TenKhachHang,
+                kh.Email,
+                kh.SDT,
+                kh.DiaChi,
+                kh.TienNo
+            };
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
+        public bool updateKhachHang(KhachHang_DTO kh)
+        {
+            string query = "update KHACHHANG set TenKhachHang = @tenkh, Email = @email, SDT = @sdt, DiaChi = @dichi, TienNo = @tienno where MaKhachHang = @makh";
+            object[] parameters = new object[] 
+            {
+                kh.TenKhachHang,
+                kh.Email,
+                kh.SDT,
+                kh.DiaChi,
+                kh.TienNo,
+                kh.MaKhachHang
+            };
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
+        public bool deleteKhachHang(KhachHang_DTO kh)
+        {
+            string query = "delete from KHACHHANG where MaKhachHang = @makh";
+            object[] parameters = new object[] 
+            {
+                kh.MaKhachHang
+            };
+            return DataProvider.Instance.ExecuteNonQuery(query, parameters);
+        }
         public bool updateTienNoCuaKhSauKhiThanhToanNo(string makh)
         {
             string query = "update KHACHHANG set TienNo = 0 where MaKhachHang = @makh";

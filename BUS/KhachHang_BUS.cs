@@ -28,7 +28,10 @@ namespace BUS
             }
         }
 
-
+        public DataTable selectDanhSachKhachHang()
+        {
+            return KhachHang_DAO.Instance.selectDanhSachKhachHang();
+        }
         public DataTable selectAllMaKhachHang()
         {
             return KhachHang_DAO.Instance.selectAllMaKhachHang();
@@ -51,7 +54,24 @@ namespace BUS
                 return KhachHang_DAO.Instance.selectInfoKhachHangByMaKH(makh);
             return null;
         }
-
+        public bool insertKhachHang(KhachHang_DTO kh)
+        {
+            if (kh.MaKhachHang != string.Empty)
+                return KhachHang_DAO.Instance.insertKhachHang(kh);
+            return false;
+        }
+        public bool updateKhachHang(KhachHang_DTO kh)
+        {
+            if (kh.MaKhachHang != string.Empty)
+                return KhachHang_DAO.Instance.updateKhachHang(kh);
+            return false;
+        }
+        public bool deleteKhachHang(KhachHang_DTO kh)
+        {
+            if (kh.MaKhachHang != string.Empty)
+                return KhachHang_DAO.Instance.deleteKhachHang(kh);
+            return false;
+        }
         public bool updateTienNoCuaKhSauKhiThanhToanNo(string makh)
         {
             if (makh != string.Empty)
