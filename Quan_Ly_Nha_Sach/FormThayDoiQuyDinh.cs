@@ -120,6 +120,10 @@ namespace Quan_Ly_Nha_Sach
                 MessageBox.Show("Cập nhật quy định thất bại");
             }
             loadAllQuyDinhCu();
+            txtSLNhapToiThieuMoi.Text = "";
+            txtSLToiThieuDeNhapMoi.Text = "";
+            txtSLTonToiThieuSauKhiBanMoi.Text = "";
+            txtTienNoToiDaMoi.Text = "";
         }
     }
 }
